@@ -13,4 +13,7 @@
 
 - DoxygenToolKit.vim：https://blog.csdn.net/liwf616/article/details/51338198
   - http://www.blogdaren.com/post-1610.html
+  - https://blog.csdn.net/wbzh/article/details/52456216
+  - https://blog.csdn.net/spark550/article/details/53877134
+  - https://blog.csdn.net/liwf616/article/details/51338198
 
