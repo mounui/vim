@@ -12,7 +12,7 @@ filetype plugin indent on
 "×Ô¶¯²¹È«
 "inoremap ( ()<ESC>i
 "inoremap " ""<ESC>i
-imap ' ''<ESC>i
+"imap ' ''<ESC>i
 imap [ []<ESC>i
 imap { {}<ESC>i
 imap < <><ESC>i
@@ -139,3 +139,4 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""
 " DoxygenToolkitÅäÖÃ
 """"""""""""""""""""""""""""""""""""""""""""
+let g:DoxygenToolkit_licenseTag="GPL 2.0"
