@@ -119,6 +119,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'molokai'		" 配色方案
 Plugin 'DoxygenToolkit.vim'		" 注释文档生成
 
 " All of your Plugins must be added before the following line
@@ -139,4 +140,12 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""
 " DoxygenToolkit配置
 """"""""""""""""""""""""""""""""""""""""""""
-let g:DoxygenToolkit_licenseTag="GPL 2.0"
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:doxygen_enhanced_color=1
+" 注释快首尾
+let g:DoxygenToolkit_blockHeader="*******************************************************" 
+let g:DoxygenToolkit_blockFooter="*******************************************************" 
+" 作者
+let g:DoxygenToolkit_authorName="maojunhui5214@163.com"
+" Lincese
+let g:DoxygenToolkit_licenseTag = "Copyright (C) 2018 http://mounui.com\<enter>\<enter>Call Center On Demand Product Series\<enter>If you have any questions, please contact me at my blog. \<enter>All right reserved\<enter>\<enter>$$\<enter>TODO:\<enter>\<enter>*******************************************************"
