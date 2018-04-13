@@ -37,9 +37,9 @@ colorscheme molokai
 set nobackup
 "禁止生成临时文件
 "set noswapfile
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim在windows下的编码设置
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set enc=utf-8
 set fencs=utf-8,gbk,chinese,big5,cp936,gb18030,gb2312,utf-16
 "set termencoding=utf-8
@@ -51,7 +51,7 @@ endif
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "语言设置
 set langmenu=zh_CN.UTF-8
 set helplang=cn
@@ -102,33 +102,28 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""
-" vim插件管理工具Vundle配置
-""""""""""""""""""""""""""""""""""""""""""""
-" set nocompatible              " be iMproved, required
-" filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle配置 插件管理工具
+" 配置参考：http://mounui.com/179.html
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set nocompatible              " 去除VI一致性,必须
+" filetype off                  " 必须
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
 call vundle#begin('$VIM/vimfiles/bundle/')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" plugin on GitHub repo
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'molokai'		" 配色方案
-Plugin 'DoxygenToolkit.vim'		" 注释文档生成
+" 插件列表
+Plugin 'VundleVim/Vundle.vim'     " Vundle插件管理工具
+Plugin 'altercation/vim-colors-solarized' " 配色方案
+Plugin 'molokai'		              " 配色方案
+Plugin 'DoxygenToolkit.vim'		    " 注释文档生成
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+" filetype plugin on
 "
-" Brief help
+" 简要帮助文档
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
@@ -136,16 +131,17 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " DoxygenToolkit配置
-""""""""""""""""""""""""""""""""""""""""""""
-let g:DoxygenToolkit_briefTag_funcName="yes"
-let g:doxygen_enhanced_color=1
-" 注释快首尾
-let g:DoxygenToolkit_blockHeader="*******************************************************" 
-let g:DoxygenToolkit_blockFooter="*******************************************************" 
-" 作者
-let g:DoxygenToolkit_authorName="maojunhui5214@163.com"
+" 参考：http://mounui.com/202.html
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lincese
-let g:DoxygenToolkit_licenseTag = "Copyright (C) 2018 http://mounui.com\<enter>\<enter>Call Center On Demand Product Series\<enter>If you have any questions, please contact me at my blog. \<enter>All right reserved\<enter>\<enter>$$\<enter>TODO:\<enter>\<enter>*******************************************************"
+let g:DoxygenToolkit_licenseTag = "\<enter>Copyright (C) 2018 http://mounui.com\<enter>If you have any questions, please contact me email:maojunhui5214@163.com\<enter>You can also leave a message on my blog."
+" 注释块首尾
+let g:DoxygenToolkit_blockHeader="************************Header*************************"
+let g:DoxygenToolkit_blockFooter="************************Footer*************************"
+" Author
+let g:DoxygenToolkit_authorName="mounui <maojunhui5214@163.com>"
+" Fun
+let g:DoxygenToolkit_briefTag_funcName="yes"    " 显示函数名
+let g:doxygen_enhanced_color=1
