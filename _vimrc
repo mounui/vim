@@ -1,3 +1,18 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM配置
+" Author: mounui
+" Email: maojunhui5214@163.com
+" Blog: http://mounui.com
+" Version: 1.0
+" Last Modify: 2018-04-18 23:02
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings 基础配置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 透明度
+au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 234)   "自动透明
+au GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)   "自动最大化
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -116,6 +131,7 @@ Plugin 'VundleVim/Vundle.vim'     " Vundle插件管理工具
 Plugin 'altercation/vim-colors-solarized' " 配色方案
 Plugin 'molokai'		              " 配色方案
 Plugin 'DoxygenToolkit.vim'		    " 注释文档生成
+Plugin 'VimTweak'					" 背景透明插件
 
 " All of your Plugins must be added before the following line
 call vundle#end()
