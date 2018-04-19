@@ -8,22 +8,74 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General Settings 基础配置
+" Load Configuration 加载配置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 透明度
-au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 234)   "自动透明
-au GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)   "自动最大化
-set nocompatible
+" 模仿windows快捷键
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
+" TODO 设置leader键
+" let mapleader=" "
+" map <leader>wq :wq<CR>
+" 开启语法高亮
+syntax on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings 基础配置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 启动的时候不显示援助乌干达儿童提示
+set shortmess=atI
+" 历史容量
+set history=1000
+" 检测文件类型
+filetype on
+" 针对不同文件类型采用不同的缩进格式
+filetype indent on
+" 允许使用插件
+filetype plugin on
+" 启用自动补全
+filetype plugin indent on
+" 文件修改之后自动载入
+set autoread
+" 备份到另一个位置
+" set bk
+" set backupext=.bak
+" set backupdir=/tmp/vimbak/
+" 从不备份
+set nobackup
+" 禁止生成临时文件
+set noswapfile
+" 文件模式列表
+set wildignore+=*.swp,*.bak,*.pyc,*.class,.svn
+" 退出vim后内容显示在终端屏幕，可用于查看和复制
+set t_ti= t_te=
+" 不启用鼠标
+set mouse-=a
+" 启用鼠标
+" set mouse=a
+" 输入字符不隐藏鼠标
+" set nomousehide
+" 去掉输入错误的提示音
+set novisualbell
+set noerrorbells
+set t_vb=
+set tm=500
+" 魔术
+set magic
+" set backspace=eol,start,indent
+" set whichwrap+=<,>,h,l
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" View Settings 显示设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 突出显示当前列
+" set cursorcolumn
+" 突出显示当前行
+" set cursorline
+
+set nocompatible
 "关闭vi兼容模式
 set nocp
-"打开文件类型检测
-filetype off
-"允许使用插件
-filetype plugin on
-filetype plugin indent on
 "自动补全
 "inoremap ( ()<ESC>i
 "inoremap " ""<ESC>i
@@ -32,8 +84,6 @@ imap [ []<ESC>i
 imap { {}<ESC>i
 imap < <><ESC>i
 imap {<CR> {<CR>}<ESC>O
-"启动的是否不显示援助乌干达儿童提示
-set shortmess=atI
 "设置窗口位置
 "winpos 5 5
 "设置窗口大小
@@ -48,10 +98,6 @@ set completeopt=preview,menu
 "set guioptions-=m
 "设置配色方案
 colorscheme molokai
-"从不备份
-set nobackup
-"禁止生成临时文件
-"set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim在windows下的编码设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,10 +193,27 @@ filetype plugin indent on
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"************************************************
+" VimTweak配置 界面配置工具
+" 参考：http://mounui.com/208.html
+"************************************************
+" 自动透明
+au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 230)
+" 自动最大化
+" au GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
+" 自动置顶
+" au GUIEnter * call libcallnr("vimtweak.dll", "EnableTopMost", 1)
+
+" 快捷键设置
+map <M-8> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 180) <CR>
+map <M-9> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 230) <CR>
+map <M-0> <ESC>:call libcallnr("vimtweak.dll", "SetAlpha", 255) <CR>
+
+"************************************************
 " DoxygenToolkit配置
 " 参考：http://mounui.com/202.html
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"************************************************
 " Lincese
 let g:DoxygenToolkit_licenseTag = "\<enter>Copyright (C) 2018 http://mounui.com\<enter>If you have any questions, please contact me email:maojunhui5214@163.com\<enter>You can also leave a message on my blog."
 " 注释块首尾
