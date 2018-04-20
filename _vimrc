@@ -21,6 +21,40 @@ behave mswin
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Encode Settings 编码设置
+" 参考：http://mounui.com/147.html
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 语言设置
+" 菜单语言
+set langmenu=zh_CN.UTF-8
+" 帮助文档
+set helplang=cn
+
+" 设置文件编码为utf-8
+set encoding=utf-8
+" 普通模式下的编码设置
+"set termencoding=utf-8
+" 自动判断编码是时依次尝试以下编码
+set fencs=utf-8,gbk,chinese,big5,cp936,gb18030,gb2312,utf-16
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+" 遇到Unicode值大于255的文本，不必等到空格在折行
+set formatoptions+=m
+" 合并两行中文时，不在中间加空格
+set formatoptions+=B
+
+" vim在windows下的编码设置
+if has("win32")
+	set enc=chinese
+else
+	set enc=utf-8
+endif
+
+"解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings 基础配置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 启动的时候不显示援助乌干达儿童提示
@@ -45,8 +79,6 @@ set autoread
 set nobackup
 " 禁止生成临时文件
 set noswapfile
-" 文件模式列表
-set wildignore+=*.swp,*.bak,*.pyc,*.class,.svn
 " 退出vim后内容显示在终端屏幕，可用于查看和复制
 set t_ti= t_te=
 " 不启用鼠标
@@ -69,10 +101,25 @@ set magic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " View Settings 显示设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI界面下窗口字体设置
+" 设置窗口位置 （距离屏幕左上角的距离）
+"winpos 5 5
+" 设置窗口大小 （40行，155列）
+"set lines=40 columns=155
+" 设置字体 （Consolas字体 大小14）
+set guifont=Consolas:h14:cANSI
+
+" 隐藏工具栏
+"set guioptions-=T
+"隐藏菜单栏
+"set guioptions-=m
+"设置配色方案
+colorscheme molokai
 " 在状态栏显示正在输入的命令
 " set showcmd
 " 在左下角显示当前vim模式
 " set showmode
+
 " 显示当前列号
 set ruler
 " 突出显示当前列
@@ -83,10 +130,69 @@ set ruler
 set scrolloff=5
 " TODO 命令行高度
 " set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+" 显示行号
+set number
+" 取消换行
+set nowrap
 
+" 自动缩进
+set autoindent
+" 智能缩进
+set smartindent
+
+" tab相关变更
+" 设置tab键的宽度
+set tabstop=4
+" 每次缩进对应的空格数
+set shiftwidth=4
+" 退格键可以一次删掉4个空格
+set softtabstop=4
+set smarttab
+" Tab自动转化为空格
+set expandtab
+set shiftround
+" C系列缩进
+set cindent
+
+" 插入括号时，短暂跳转到匹配的括号上
+set showmatch
+" 跳转到配对括号上的时间，默认1/10 秒
+set matchtime=2
+
+" 搜索相关
+" 搜索忽略大小写
+set ignorecase
+" 有一个或以上大写字母时仍大小写敏感
+set smartcase
+" 高亮search文本
+set hlsearch
+" 开启增量搜索模式
+set incsearch
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Others 其他设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimrc文件修改后自动加载
+if has("win32")
+    autocmd! bufwritepost _vimrc source %
+else
+    autocmd! bufwritepost .vimrc source %
+endif
+
+" 关闭vi兼容模式
 set nocompatible
-"关闭vi兼容模式
-set nocp
+
+" 自动补全
+" 让vim补全菜单行为和一般IDE一致
+set completeopt=preview,menu
+" 增强模式中命令行自动完成
+set wildmenu
+" 文件模式列表
+set wildignore+=*.swp,*.bak,*.pyc,*.class,.svn
+
+" 离开插入模式后自动关闭预览窗口
+au InsertLeave * if pumvisible() == 0|pclose|endif
+
 "自动补全
 "inoremap ( ()<ESC>i
 "inoremap " ""<ESC>i
@@ -95,51 +201,6 @@ imap [ []<ESC>i
 imap { {}<ESC>i
 imap < <><ESC>i
 imap {<CR> {<CR>}<ESC>O
-"设置窗口位置
-"winpos 5 5
-"设置窗口大小
-"set lines=40 columns=155
-"设置字体
-set guifont=Consolas:h14:cANSI
-"代码补全
-set completeopt=preview,menu
-"隐藏工具栏
-"set guioptions-=T
-"隐藏菜单栏
-"set guioptions-=m
-"设置配色方案
-colorscheme molokai
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"vim在windows下的编码设置
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set enc=utf-8
-set fencs=utf-8,gbk,chinese,big5,cp936,gb18030,gb2312,utf-16
-"set termencoding=utf-8
-if has("win32")
-	set enc=chinese
-else
-	set enc=utf-8
-endif
-"解决菜单乱码
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"语言设置
-set langmenu=zh_CN.UTF-8
-set helplang=cn
-"显示行号
-set nu
-"自动缩进
-set autoindent
-set cindent
-"统一缩进为4
-set softtabstop=4
-set shiftwidth=4
-"tab键的宽度
-set tabstop=4
-"空格代表制表符
-set noexpandtab
-set smarttab
 "自动补全命令时候使用菜单式匹配列表
 "set wildmenu
 "autocmd filetype ruby,eruby set omnifunc=rubycomplete#complete
@@ -149,30 +210,30 @@ set smarttab
 "autocmd filetype css set omnifunc=csscomplete#completecss
 "autocmd filetype xml set omnifunc=xmlcomplete#completetags
 "autocmd FileType java set omnifunc=javacomplete#Complet
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
+" set diffexpr=MyDiff()
+"function MyDiff()
+"  let opt = '-a --binary '
+"  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+"  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+"  let arg1 = v:fname_in
+"  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+"  let arg2 = v:fname_new
+"  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+"  let arg3 = v:fname_out
+"  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+"  let eq = ''
+"  if $VIMRUNTIME =~ ' '
+"    if &sh =~ '\<cmd'
+"      let cmd = '""' . $VIMRUNTIME . '\diff"'
+"      let eq = '"'
+"    else
+"      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+"    endif
+"  else
+"    let cmd = $VIMRUNTIME . '\diff'
+"  endif
+"  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+"endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle配置 插件管理工具
@@ -217,6 +278,7 @@ au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 230)
 " au GUIEnter * call libcallnr("vimtweak.dll", "EnableTopMost", 1)
 
 " 快捷键设置
+map <M-1> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 10) <CR>
 map <M-8> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 180) <CR>
 map <M-9> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 230) <CR>
 map <M-0> <ESC>:call libcallnr("vimtweak.dll", "SetAlpha", 255) <CR>
