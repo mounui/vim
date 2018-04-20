@@ -62,16 +62,27 @@ set t_vb=
 set tm=500
 " 魔术
 set magic
+" 配置backspace 从行首和行末可以跳到另一行
 " set backspace=eol,start,indent
 " set whichwrap+=<,>,h,l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " View Settings 显示设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 在状态栏显示正在输入的命令
+" set showcmd
+" 在左下角显示当前vim模式
+" set showmode
+" 显示当前列号
+set ruler
 " 突出显示当前列
 " set cursorcolumn
 " 突出显示当前行
 " set cursorline
+" 光标移动时，上下方总会保留相应行数
+set scrolloff=5
+" TODO 命令行高度
+" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 
 set nocompatible
 "关闭vi兼容模式
