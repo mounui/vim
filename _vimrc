@@ -15,8 +15,8 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 " TODO 设置leader键
-" let mapleader=" "
-" map <leader>wq :wq<CR>
+let mapleader=","
+let g:maplesder=","
 " 开启语法高亮
 syntax on
 
@@ -45,9 +45,9 @@ set formatoptions+=B
 
 " vim在windows下的编码设置
 if has("win32")
-	set enc=chinese
+    set enc=chinese
 else
-	set enc=utf-8
+    set enc=utf-8
 endif
 
 "解决菜单乱码
@@ -110,9 +110,9 @@ set magic
 set guifont=Consolas:h14:cANSI
 
 " 隐藏工具栏
-"set guioptions-=T
+set guioptions-=T
 "隐藏菜单栏
-"set guioptions-=m
+set guioptions-=m
 "设置配色方案
 colorscheme molokai
 " 在状态栏显示正在输入的命令
@@ -169,6 +169,24 @@ set hlsearch
 " 开启增量搜索模式
 set incsearch
 
+" 代码折叠
+set foldenable
+" 折叠方法
+set foldmethod=indent
+" 关闭的折叠级别
+set foldlevel=99
+" 配置代码折叠键盘映射
+map <leader>zz :call ToggleFold()<CR>
+let g:FoldMethod = 0
+fun! ToggleFold()
+    if g:FoldMethod == 0
+        exe "normal! zM"
+        let g:FoldMethod = 1
+    else
+        exe "normal! zR"
+        let g:FoldMethod = 0
+    endif
+endfun
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Others 其他设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -183,15 +201,16 @@ endif
 set nocompatible
 
 " 自动补全
-" 让vim补全菜单行为和一般IDE一致
+" 让vim补全菜单行为和一般IDE一致 （使用<C-p>,<C-n>弹出提示窗口）
 set completeopt=preview,menu
 " 增强模式中命令行自动完成
 set wildmenu
-" 文件模式列表
+" 文件模式列表 （忽略的文件模式）
 set wildignore+=*.swp,*.bak,*.pyc,*.class,.svn
-
 " 离开插入模式后自动关闭预览窗口
 au InsertLeave * if pumvisible() == 0|pclose|endif
+" 回车即选中补全提示列表里当前项
+imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 "自动补全
 "inoremap ( ()<ESC>i
@@ -282,6 +301,7 @@ map <M-1> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 10) <CR>
 map <M-8> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 180) <CR>
 map <M-9> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 230) <CR>
 map <M-0> <ESC>:call libcallnr("vimtweak.dll", "SetAlpha", 255) <CR>
+map _+ <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 1) <CR>
 
 "************************************************
 " DoxygenToolkit配置
