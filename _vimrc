@@ -62,12 +62,12 @@ set shortmess=atI
 " 历史容量
 set history=1000
 " 检测文件类型
-filetype on
+"filetype on
 " 针对不同文件类型采用不同的缩进格式
-filetype indent on
+"filetype indent on
 " 允许使用插件
-filetype plugin on
-" 启用自动补全
+"filetype plugin on
+" 开启文件类型检测，启用插件和缩进
 filetype plugin indent on
 " 文件修改之后自动载入
 set autoread
@@ -269,10 +269,11 @@ Plugin 'altercation/vim-colors-solarized' " 配色方案
 Plugin 'molokai'		              " 配色方案
 Plugin 'DoxygenToolkit.vim'		    " 注释文档生成
 Plugin 'VimTweak'					" 背景透明插件
+Plugin 'SuperTab'                   " 补全记忆插件
 
 " All of your Plugins must be added before the following line
 call vundle#end()
-filetype plugin indent on
+"filetype plugin indent on
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 "
