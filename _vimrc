@@ -12,11 +12,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 模仿windows快捷键
 source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
 " TODO 设置leader键
-let mapleader=","
-let g:maplesder=","
+let mapleader=" "
+let g:maplesder=" "
 " 开启语法高亮
 syntax on
 
@@ -199,18 +199,27 @@ endif
 
 " 关闭vi兼容模式
 set nocompatible
+" 启用系统剪贴板
+set clipboard=unnamed
 
-" 自动补全
+" 自动补全 参考：http://mounui.com/212.html
 " 让vim补全菜单行为和一般IDE一致 （使用<C-p>,<C-n>弹出提示窗口）
 set completeopt=preview,menu
 " 增强模式中命令行自动完成
 set wildmenu
 " 文件模式列表 （忽略的文件模式）
 set wildignore+=*.swp,*.bak,*.pyc,*.class,.svn
+"set wildmode=list:longest  " 列表形式展示候选
+set ttyfast
 " 离开插入模式后自动关闭预览窗口
 au InsertLeave * if pumvisible() == 0|pclose|endif
 " 回车即选中补全提示列表里当前项
 imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" 自动补全选择选项方向键映射
+imap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+imap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+imap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+imap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 "自动补全
 "inoremap ( ()<ESC>i
@@ -264,12 +273,13 @@ set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
 call vundle#begin('$VIM/vimfiles/bundle/')
 
 " 插件列表
-Plugin 'VundleVim/Vundle.vim'     " Vundle插件管理工具
+Plugin 'VundleVim/Vundle.vim'           " Vundle插件管理工具
 Plugin 'altercation/vim-colors-solarized' " 配色方案
-Plugin 'molokai'		              " 配色方案
-Plugin 'DoxygenToolkit.vim'		    " 注释文档生成
-Plugin 'VimTweak'					" 背景透明插件
-Plugin 'SuperTab'                   " 补全记忆插件
+Plugin 'molokai'		                " 配色方案
+Plugin 'DoxygenToolkit.vim'		        " 注释文档生成
+Plugin 'VimTweak'					    " 背景透明插件
+"Plugin 'SuperTab'                      " 补全记忆插件
+Plugin 'AutoComplPop'                   " 自动代码提示
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -303,9 +313,28 @@ map <M-8> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 180) <CR>
 map <M-9> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 230) <CR>
 map <M-0> <ESC>:call libcallnr("vimtweak.dll", "SetAlpha", 255) <CR>
 map _+ <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 1) <CR>
+map _- <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 0) <CR>
 
 "************************************************
-" DoxygenToolkit配置
+" SuperTab配置 自动补全记忆插件
+" 参考：http://mounui.com/217.html
+"************************************************
+" 补全模式
+"let g:SuperTabRetainCompletionType = 2
+" 补全方式
+"let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+
+"autocomplpop插件,一个字母即可补全 
+let g:acp_behaviorKeywordLength = 1
+let g:acp_mappingDriven = 1
+
+"color  
+hi Pmenu guibg=#444444  
+hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff 
+au FileType php setlocal dict+=$VIM/vimfiles/bundle/AutoComplPop/dict/php_funclist.txt  
+
+"************************************************
+" DoxygenToolkit配置 注释插件
 " 参考：http://mounui.com/202.html
 "************************************************
 " Lincese
