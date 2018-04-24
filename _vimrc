@@ -134,6 +134,8 @@ set scrolloff=5
 set number
 " 取消换行
 set nowrap
+" 每行最大字符数，超出换行
+"set textwidth=80
 
 " 自动缩进
 set autoindent
@@ -276,9 +278,10 @@ call vundle#begin('$VIM/vimfiles/bundle/')
 Plugin 'VundleVim/Vundle.vim'           " Vundle插件管理工具
 Plugin 'altercation/vim-colors-solarized' " 配色方案
 Plugin 'molokai'		                " 配色方案
+Plugin 'colorizer'                      " 颜色显示插件
 Plugin 'DoxygenToolkit.vim'		        " 注释文档生成
 Plugin 'VimTweak'					    " 背景透明插件
-"Plugin 'SuperTab'                      " 补全记忆插件
+Plugin 'SuperTab'                      " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
 
 " All of your Plugins must be added before the following line
@@ -320,27 +323,34 @@ map _- <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 0) <CR>
 " 参考：http://mounui.com/217.html
 "************************************************
 " 补全模式
-"let g:SuperTabRetainCompletionType = 2
+let g:SuperTabRetainCompletionType = 2
 " 补全方式
 "let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
-"autocomplpop插件,一个字母即可补全 
-let g:acp_behaviorKeywordLength = 1
-let g:acp_mappingDriven = 1
+"************************************************
+" AutoComplPop配置 自动代码提示插件
+" 参考：http://mounui.com/225.html
+"************************************************
+" 输入一个字母即可补全
+"let g:acp_behaviorKeywordLength = 1
+" 自动弹出是由键映射，对于通过移动来避免自动弹出是很有用
+let g:AutoComplPop_MappingDriven = 1
+" 修改GUI高亮参数 该设置全局有效
+hi Pmenu guibg=#444444
+hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
 
-"color  
-hi Pmenu guibg=#444444  
-hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff 
-au FileType php setlocal dict+=$VIM/vimfiles/bundle/AutoComplPop/dict/php_funclist.txt  
-if !exists('g:AutoComplPop_Behavior')  
-let g:AutoComplPop_Behavior = {}  
-let g:AutoComplPop_Behavior['php'] = []  
-call add(g:AutoComplPop_Behavior['php'], {  
-\ 'command' :"\\",  
-\ 'pattern' : printf('?>∥::∥$\k\{%d,}$', 0),  
-\ 'repeat' : 0,  
-\})  
-endif  
+" 加载PHP函数字典，配置PHP函数自动补全，注意文件位置
+au FileType php setlocal dict+=$VIM/vimfiles/bundle/AutoComplPop/dict/php_funclist.txt
+" PHP提示触发
+if !exists('g:AutoComplPop_Behavior')
+	let g:AutoComplPop_Behavior = {}
+	let g:AutoComplPop_Behavior['php'] = []
+	call add(g:AutoComplPop_Behavior['php'], {
+		\ 'command' :"\\",
+		\ 'pattern' : printf('?>∥::∥$\k\{%d,}$', 0),
+		\ 'repeat' : 0,
+		\ })
+endif
 
 "************************************************
 " DoxygenToolkit配置 注释插件
