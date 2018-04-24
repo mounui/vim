@@ -332,6 +332,15 @@ let g:acp_mappingDriven = 1
 hi Pmenu guibg=#444444  
 hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff 
 au FileType php setlocal dict+=$VIM/vimfiles/bundle/AutoComplPop/dict/php_funclist.txt  
+if !exists('g:AutoComplPop_Behavior')  
+let g:AutoComplPop_Behavior = {}  
+let g:AutoComplPop_Behavior['php'] = []  
+call add(g:AutoComplPop_Behavior['php'], {  
+\ 'command' :"\\",  
+\ 'pattern' : printf('?>¡Î::¡Î$\k\{%d,}$', 0),  
+\ 'repeat' : 0,  
+\})  
+endif  
 
 "************************************************
 " DoxygenToolkitÅäÖÃ ×¢ÊÍ²å¼ş
