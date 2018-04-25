@@ -61,14 +61,14 @@ source $VIMRUNTIME/menu.vim
 set shortmess=atI
 " 历史容量
 set history=1000
-" 检测文件类型
-"filetype on
 " 针对不同文件类型采用不同的缩进格式
 "filetype indent on
 " 允许使用插件
 "filetype plugin on
 " 开启文件类型检测，启用插件和缩进
 filetype plugin indent on
+" 不检测文件类型
+"filetype off
 " 文件修改之后自动载入
 set autoread
 " 备份到另一个位置
@@ -278,10 +278,10 @@ call vundle#begin('$VIM/vimfiles/bundle/')
 Plugin 'VundleVim/Vundle.vim'           " Vundle插件管理工具
 Plugin 'altercation/vim-colors-solarized' " 配色方案
 Plugin 'molokai'		                " 配色方案
-Plugin 'colorizer'                      " 颜色显示插件
+Plugin 'colorizer'                      " css颜色显示插件
 Plugin 'DoxygenToolkit.vim'		        " 注释文档生成
 Plugin 'VimTweak'					    " 背景透明插件
-Plugin 'SuperTab'                      " 补全记忆插件
+Plugin 'ervandew/supertab'              " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
 
 " All of your Plugins must be added before the following line
@@ -298,6 +298,15 @@ call vundle#end()
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+"************************************************
+" colorizer配置 css显示颜色插件
+" 参考：http://mounui.com/208.html
+"************************************************
+" 显示设置，默认值为2；0，1 软化前景色，-1 纯色显示
+let g:colorizer_fgcontrast = 0
+" 启动时不启用着色
+let g:colorizer_startup = 0
 
 "************************************************
 " VimTweak配置 界面配置工具
@@ -325,7 +334,7 @@ map _- <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 0) <CR>
 " 补全模式
 let g:SuperTabRetainCompletionType = 2
 " 补全方式
-"let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 
 "************************************************
 " AutoComplPop配置 自动代码提示插件
