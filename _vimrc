@@ -202,7 +202,7 @@ endif
 " 关闭vi兼容模式
 set nocompatible
 " 启用系统剪贴板
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " 自动补全 参考：http://mounui.com/212.html
 " 让vim补全菜单行为和一般IDE一致 （使用<C-p>,<C-n>弹出提示窗口）
@@ -222,6 +222,9 @@ imap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 imap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 imap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 imap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+
+vmap <C-C> "*y
+nmap <C-V> "*p
 
 "自动补全
 "inoremap ( ()<ESC>i
