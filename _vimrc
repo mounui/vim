@@ -80,7 +80,7 @@ set nobackup
 " 禁止生成临时文件
 set noswapfile
 " 退出vim后内容显示在终端屏幕，可用于查看和复制
-set t_ti= t_te=
+"set t_ti= t_te=
 " 不启用鼠标
 set mouse-=a
 " 启用鼠标
@@ -223,6 +223,7 @@ imap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 imap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 imap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
+" 复制粘贴映射（与外界互通） 参考：http://mounui.com/236.html
 vmap <C-C> "*y
 nmap <C-V> "*p
 
