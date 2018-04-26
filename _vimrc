@@ -334,7 +334,7 @@ map _- <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 0) <CR>
 " 补全模式
 let g:SuperTabRetainCompletionType = 2
 " 补全方式
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 "************************************************
 " AutoComplPop配置 自动代码提示插件
@@ -355,8 +355,8 @@ if !exists('g:AutoComplPop_Behavior')
 	let g:AutoComplPop_Behavior = {}
 	let g:AutoComplPop_Behavior['php'] = []
 	call add(g:AutoComplPop_Behavior['php'], {
-		\ 'command' :"\\",
-		\ 'pattern' : printf('?>∥::∥$\k\{%d,}$', 0),
+		\ 'command' : "\<C-x>\<C-o>",
+		\ 'pattern' : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
 		\ 'repeat' : 0,
 		\ })
 endif
