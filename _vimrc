@@ -190,21 +190,23 @@ fun! ToggleFold()
     endif
 endfun
 
-" 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
-set relativenumber number
-au FocusLost * :set norelativenumber number
+" 相对行号
+set relativenumber
+" vim获取焦点时用相对行号，失去焦点时用绝对行号
+au FocusLost * :set norelativenumber
 au FocusGained * :set relativenumber
-" 插入模式下用绝对行号, 普通模式下用相对
-autocmd InsertEnter * :set norelativenumber number
+" 插入模式下用绝对行号，普通模式下用相对行号
+autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber number
-  else
-    set relativenumber
-  endif
+" 普通模式下绝对、相对行号切换映射
+nmap <C-N> :call NumberToggle()<CR>
+fun! NumberToggle()
+	if (&relativenumber == 1)
+	    set norelativenumber number
+	else
+	    set relativenumber
+	endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Others 其他设置
