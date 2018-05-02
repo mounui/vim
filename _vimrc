@@ -4,7 +4,7 @@
 " Email: maojunhui5214@163.com
 " Blog: http://mounui.com
 " Version: 1.2
-" Last Modify: 2018-05-01 23:55
+" Last Modify: 2018-05-02 17:20
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,6 +245,49 @@ imap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 " 复制粘贴映射（与外界互通） 参考：http://mounui.com/236.html
 vmap <C-C> "*y
 nmap <C-V> "*p
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" HotKey Settings 自定义快捷键设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 关闭方向键
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+
+" 同物理行上跳转
+nmap k gk
+nmap j gj
+
+" <F1> 退出
+nmap <F1> <Esc>
+" <F2> 行号开关
+nmap <F2> :call HideNumber()<CR>
+fun! HideNumber()
+  if(&relativenumber == &number)
+    set relativenumber! number!
+  elseif(&number)
+    set number!
+  else
+    set relativenumber!
+  endif
+  set number?
+endfunc
+" <F3> 可打印字符切换
+nmap <F3> :set list! list?<CR>
+" <F4> 换行切换
+nmap <F4> :set wrap! wrap?<CR>
+" <F5> 粘贴模式开关
+"set pastetoggle=<F5>
+nmap <F5> :set paste! paste?<CR>
+" <F6> 语法开关，关闭语法可以加快大文件的展示
+nmap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+
+" 分屏窗口移动
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 "自动补全
 "inoremap ( ()<ESC>i
