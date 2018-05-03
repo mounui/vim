@@ -3,8 +3,8 @@
 " Author: mounui
 " Email: maojunhui5214@163.com
 " Blog: http://mounui.com
-" Version: 1.8
-" Last Modify: 2018-05-03 17:40
+" Version: 2.0
+" Last Modify: 2018-05-03 19:00
 " Sections:
 "       -- Load Configuration 加载配置
 "       -- Encode Settings 编码设置
@@ -358,48 +358,6 @@ au BufRead,BufNewFile *.part set filetype=html
 au BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 au BufWinEnter *.php set mps-=<:>
 
-"自动补全
-"inoremap ( ()<ESC>i
-"inoremap " ""<ESC>i
-"imap ' ''<ESC>i
-imap [ []<ESC>i
-imap { {}<ESC>i
-imap < <><ESC>i
-imap {<CR> {<CR>}<ESC>O
-"自动补全命令时候使用菜单式匹配列表
-"set wildmenu
-"autocmd filetype ruby,eruby set omnifunc=rubycomplete#complete
-"autocmd filetype python set omnifunc=pythoncomplete#complete
-"autocmd filetype javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd filetype html set omnifunc=htmlcomplete#completetags
-"autocmd filetype css set omnifunc=csscomplete#completecss
-"autocmd filetype xml set omnifunc=xmlcomplete#completetags
-"autocmd FileType java set omnifunc=javacomplete#Complet
-" set diffexpr=MyDiff()
-"function MyDiff()
-"  let opt = '-a --binary '
-"  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-"  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-"  let arg1 = v:fname_in
-"  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-"  let arg2 = v:fname_new
-"  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-"  let arg3 = v:fname_out
-"  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-"  let eq = ''
-"  if $VIMRUNTIME =~ ' '
-"    if &sh =~ '\<cmd'
-"      let cmd = '""' . $VIMRUNTIME . '\diff"'
-"      let eq = '"'
-"    else
-"      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-"    endif
-"  else
-"    let cmd = $VIMRUNTIME . '\diff'
-"  endif
-"  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-"endfunction
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle配置 插件管理工具
 " 配置参考：http://mounui.com/179.html
@@ -419,12 +377,8 @@ Plugin 'VimTweak'					    " 背景透明插件
 Plugin 'ervandew/supertab'              " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
 
-" All of your Plugins must be added before the following line
 call vundle#end()
-"filetype plugin indent on
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-"
+
 " 简要帮助文档
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
