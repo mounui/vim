@@ -289,6 +289,15 @@ map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
+" 快速进入命令行
+nmap ; :
+
+" 命令行模式增强，ctrl-a到行首，-e到行尾
+cmap <C-j> <t_kd>
+cmap <C-k> <t_ku>
+cmap <C-a> <Home>
+cmap <C-e> <End>
+
 "自动补全
 "inoremap ( ()<ESC>i
 "inoremap " ""<ESC>i
