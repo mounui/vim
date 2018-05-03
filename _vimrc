@@ -3,8 +3,16 @@
 " Author: mounui
 " Email: maojunhui5214@163.com
 " Blog: http://mounui.com
-" Version: 1.2
-" Last Modify: 2018-05-02 17:20
+" Version: 1.8
+" Last Modify: 2018-05-03 17:40
+" Sections:
+"       -- Load Configuration 加载配置
+"       -- Encode Settings 编码设置
+"       -- General Settings 基础配置
+"       -- View Settings 显示设置
+"       -- Others Settings 其他设置
+"       -- HotKey Settings 自定义快捷键
+"       -- Vundle配置 插件管理
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -209,7 +217,7 @@ fun! NumberToggle()
 endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Others 其他设置
+" Others Settings 其他设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimrc文件修改后自动加载
 if has("win32")
@@ -259,6 +267,14 @@ map <Right> <Nop>
 nmap k gk
 nmap j gj
 
+" kj替换<Esc>
+imap kj <Esc>
+" 快速进入命令行
+nmap ; :
+
+" 去掉搜索高亮
+map <silent> <leader>/ :noh<CR>
+
 " <F1> 退出
 nmap <F1> <Esc>
 " <F2> 行号开关
@@ -289,14 +305,58 @@ map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
-" 快速进入命令行
-nmap ; :
-
 " 命令行模式增强，ctrl-a到行首，-e到行尾
 cmap <C-j> <t_kd>
 cmap <C-k> <t_ku>
 cmap <C-a> <Home>
 cmap <C-e> <End>
+
+" 保持搜索模式始终在屏幕中间
+nmap <silent> n nzz
+nmap <silent> N Nzz
+nmap <silent> * *zz
+nmap <silent> # #zz
+nmap <silent> g* g*zz
+nmap <silent> g# g#zz
+
+" 标签页tab切换
+map <leader>tj :tabnext<CR>
+map <leader>tk :tabprev<CR>
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprev<CR>
+map <leader>th :tabfirst<CR>
+map <leader>tl :tablast<CR>
+map <leader>te :tabedit<CR>
+map <leader>td :tabclose<CR>
+map <leader>tm :tabm<CR>
+" 正常模式下切换到确切的tab
+map <leader>1 1gt
+map <leader>2 2gt
+map <leader>3 3gt
+map <leader>4 4gt
+map <leader>5 5gt
+map <leader>6 6gt
+map <leader>7 7gt
+map <leader>8 8gt
+map <leader>9 9gt
+map <leader>0 :tablast<CR>
+" tab切换
+let g:last_active_tab = 1   " 当前标签页编号
+nmap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<CR>
+au TabLeave * let g:last_active_tab = tabpagenr()
+
+" 全选
+map <leader>sa ggVG
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FileType Settings 文件类型设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au filetype python set tabstop=4 shiftwidth=4 expandtab ai
+au filetype ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+au BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
+au BufRead,BufNewFile *.part set filetype=html
+au BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+au BufWinEnter *.php set mps-=<:>
 
 "自动补全
 "inoremap ( ()<ESC>i
