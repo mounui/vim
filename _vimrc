@@ -376,6 +376,7 @@ Plugin 'DoxygenToolkit.vim'		        " 注释文档生成
 Plugin 'VimTweak'					    " 背景透明插件
 Plugin 'ervandew/supertab'              " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
+Plugin 'w0rp/ale'                       " 代码检查
 
 call vundle#end()
 
