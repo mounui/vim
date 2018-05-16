@@ -452,6 +452,21 @@ if !exists('g:AutoComplPop_Behavior')
 endif
 
 "************************************************
+" ale配置 语法检查插件
+"************************************************
+" 保持侧边栏可见
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+" 自定义error和warning标识符
+let g:ale_sign_error = '--'
+let g:ale_sign_warning = '>>'
+"在vim自带的状态栏中整合ale
+let g:ale_statusline_format = ['? %d', '? %d', '? ok']
+"显示Linter名称,出错或警告等相关信息
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"************************************************
 " DoxygenToolkit配置 注释插件
 " 参考：http://mounui.com/202.html
 "************************************************
