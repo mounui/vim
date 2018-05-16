@@ -92,7 +92,7 @@ set noswapfile
 " 不启用鼠标
 set mouse-=a
 " 启用鼠标
-" set mouse=a
+"set mouse=a
 " 输入字符不隐藏鼠标
 " set nomousehide
 " 去掉输入错误的提示音
@@ -137,7 +137,7 @@ set ruler
 " 光标移动时，上下方总会保留相应行数
 set scrolloff=5
 " TODO 命令行高度
-" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 " 显示行号
 set number
 " 取消换行
@@ -456,16 +456,22 @@ endif
 "************************************************
 " 保持侧边栏可见
 let g:ale_sign_column_always = 1
+" 禁用突出显示
 let g:ale_set_highlights = 0
 " 自定义error和warning标识符
-let g:ale_sign_error = '--'
-let g:ale_sign_warning = '>>'
-"在vim自带的状态栏中整合ale
-let g:ale_statusline_format = ['? %d', '? %d', '? ok']
-"显示Linter名称,出错或警告等相关信息
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+" 在vim自带的状态栏中整合ale
+"let g:ale_statusline_format = ['X %d', '! %d', 'O ok']
+" 显示Linter名称,出错或警告等相关信息
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" 键入时不检查
+"let g:ale_lint_on_text_changed = 'never'
+" 进入时不检查
+let g:ale_lint_on_entere = 0
+
 "************************************************
 " DoxygenToolkit配置 注释插件
 " 参考：http://mounui.com/202.html
