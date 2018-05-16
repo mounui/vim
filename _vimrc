@@ -87,6 +87,8 @@ set autoread
 set nobackup
 " 禁止生成临时文件
 set noswapfile
+" 不产生nu文件
+set noundofile
 " 退出vim后内容显示在终端屏幕，可用于查看和复制
 "set t_ti= t_te=
 " 不启用鼠标
