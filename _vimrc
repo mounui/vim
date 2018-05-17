@@ -469,10 +469,12 @@ let g:ale_sign_warning = '--'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" 只有在文件保存时检查
+"let g:ale_fix_on_save = 1
 " 键入时不检查
 "let g:ale_lint_on_text_changed = 'never'
 " 进入时不检查
-let g:ale_lint_on_entere = 0
+"let g:ale_lint_on_entere = 0
 
 "************************************************
 " DoxygenToolkit配置 注释插件
