@@ -2,7 +2,7 @@
 # VIM CHEATSHEET （VIM速查表）
 # Author：mounui	http://mounui.com
 # https://github.com/mounui/vim/cheatsheet.txt
-# version：1.0	Last Modified：2018-05-21 17:43
+# version：2.0	Last Modified：2018-05-22 22:31
 ############################################################################
 
 ############################################################################
@@ -387,182 +387,182 @@ gT                  	上一个标签页
 # 书签
 ############################################################################
 
-:marks              显示所有书签
-ma                  保存当前位置到书签 a ，书签名可以用 a-z（作用范围为文件内部）, A-Z（作用范围为所有文件） 26*2个字母
-'a                  跳转到书签 a所在的行
-`a                  跳转到书签 a所在位置
-`.                  跳转到上一次编辑的行
-'A                  跳转到全文书签 A
-['                  跳转到上一个书签
-]'                  跳转到下一个书签
-'<                  跳到上次可视模式选择区域的开始
-'>                  跳到上次可视模式选择区域的结束
+:marks              	显示所有书签
+ma                  	保存当前位置到书签 a ，书签名可以用 a-z（作用范围为文件内部）, A-Z（作用范围为所有文件） 26*2个字母
+'a                  	跳转到书签 a所在的行
+`a                  	跳转到书签 a所在位置
+`.                  	跳转到上一次编辑的行
+'A                  	跳转到全文书签 A
+['                  	跳转到上一个书签
+]'                  	跳转到下一个书签
+'<                  	跳到上次可视模式选择区域的开始
+'>                  	跳到上次可视模式选择区域的结束
 
 ############################################################################
 # 常用设置
 ############################################################################
 
-:set nocompatible   设置不兼容原始 vi 模式（必须设置在最开头）
-:set bs=?           设置BS键模式，现代编辑器为 :set bs=eol,start,indent
-:set sw=4           设置缩进宽度为 4
-:set ts=4           设置制表符宽度为 4
-:set noet           设置不展开 tab 成空格
-:set et             设置展开 tab 成空格
-:set winaltkeys=no  设置 GVim 下正常捕获 ALT 键
-:set nowrap         关闭自动换行
-:set ttimeout       允许终端按键检测超时（终端下功能键为一串ESC开头的扫描码）
-:set ttm=100        设置终端按键检测超时为100毫秒
-:set term=?         设置终端类型，比如常见的 xterm
-:set ignorecase     设置搜索是否忽略大小写
-:set smartcase      智能大小写，默认忽略大小写，除非搜索内容里包含大写字母
-:set list           设置显示制表符和换行符
-:set number         设置显示行号，禁止显示行号可以用 :set nonumber
-:set paste          进入粘贴模式（粘贴时禁用缩进等影响格式的东西）
-:set nopaste        结束粘贴模式
-:set spell          允许拼写检查
-:set hlsearch       设置高亮查找
-:set ruler          总是显示光标位置
-:set incsearch      查找输入时动态增量显示查找结果
-:set insertmode     Vim 始终处于插入模式下，使用 ctrl-o 临时执行命令
-:set all            列出所有选项设置情况
-:syntax on          允许语法高亮
-:syntax off         禁止语法高亮
+:set nocompatible   	设置不兼容原始 vi 模式（必须设置在最开头）
+:set bs=?           	设置BS键模式，现代编辑器为 :set bs=eol,start,indent
+:set sw=4           	设置缩进宽度为 4
+:set ts=4           	设置制表符宽度为 4
+:set noet           	设置不展开 tab 成空格
+:set et             	设置展开 tab 成空格
+:set winaltkeys=no  	设置 GVim 下正常捕获 ALT 键
+:set nowrap         	关闭自动换行
+:set ttimeout       	允许终端按键检测超时（终端下功能键为一串ESC开头的扫描码）
+:set ttm=100        	设置终端按键检测超时为100毫秒
+:set term=?         	设置终端类型，比如常见的 xterm
+:set ignorecase     	设置搜索是否忽略大小写
+:set smartcase      	智能大小写，默认忽略大小写，除非搜索内容里包含大写字母
+:set list           	设置显示制表符和换行符
+:set number         	设置显示行号，禁止显示行号可以用 :set nonumber
+:set paste          	进入粘贴模式（粘贴时禁用缩进等影响格式的东西）
+:set nopaste        	结束粘贴模式
+:set spell          	允许拼写检查
+:set hlsearch       	设置高亮查找
+:set ruler          	总是显示光标位置
+:set incsearch      	查找输入时动态增量显示查找结果
+:set insertmode     	Vim 始终处于插入模式下，使用 ctrl-o 临时执行命令
+:set all            	列出所有选项设置情况
+:syntax on          	允许语法高亮
+:syntax off         	禁止语法高亮
 
 ############################################################################
 # 帮助信息
 ############################################################################
 
-:h tutor            入门文档
-:h quickref         快速帮助
-:h index            查询 Vim 所有键盘命令定义
-:h summary          帮助你更好的使用内置帮助系统
-:h CTRL-H           查询普通模式下 CTRL-H 是干什么的
-:h i_CTRL-H         查询插入模式下 CTRL-H 是干什么的
-:h i_<Up>           查询插入模式下方向键上是干什么的
-:h pattern.txt      正则表达式帮助
-:h eval             脚本编写帮助
-:h function-list    查看 VimScript 的函数列表
-:h windows.txt      窗口使用帮助
-:h tabpage.txt      标签页使用帮助
-:h +timers          显示对 +timers 特性的帮助
-:h :!               查看如何运行外部命令
-:h tips             查看 Vim 内置的常用技巧文档
-:h set-termcap      查看如何设置按键扫描码
-:viusage            NORMAL 模式帮助
-:exusage            EX 命令帮助
-:version            显示当前 Vim 的版本号和特性
+:h tutor            	入门文档
+:h quickref         	快速帮助
+:h index            	查询 Vim 所有键盘命令定义
+:h summary          	帮助你更好的使用内置帮助系统
+:h CTRL-H           	查询普通模式下 CTRL-H 是干什么的
+:h i_CTRL-H         	查询插入模式下 CTRL-H 是干什么的
+:h i_<Up>           	查询插入模式下方向键上是干什么的
+:h pattern.txt      	正则表达式帮助
+:h eval             	脚本编写帮助
+:h function-list    	查看 VimScript 的函数列表
+:h windows.txt      	窗口使用帮助
+:h tabpage.txt      	标签页使用帮助
+:h +timers          	显示对 +timers 特性的帮助
+:h :!               	查看如何运行外部命令
+:h tips             	查看 Vim 内置的常用技巧文档
+:h set-termcap      	查看如何设置按键扫描码
+:viusage            	NORMAL 模式帮助
+:exusage            	EX 命令帮助
+:version            	显示当前 Vim 的版本号和特性
 
 ############################################################################
 # 外部命令
 ############################################################################
 
-:!ls                运行外部命令 ls，并等待返回
-:r !ls              将外部命令 ls 的输出捕获，并插入到光标后
-:w !sudo tee %      sudo以后保存当前文件
-:call system('ls')  调用 ls 命令，但是不显示返回内容
-:!start notepad     Windows 下启动 notepad，最前面可以加 silent
-:sil !start cmd     Windows 下当前目录打开 cmd
-:%!prog             运行文字过滤程序，如整理 json格式 :%!python -m json.tool
+:!ls                	运行外部命令 ls，并等待返回
+:r !ls              	将外部命令 ls 的输出捕获，并插入到光标后
+:w !sudo tee %      	sudo以后保存当前文件
+:call system('ls')  	调用 ls 命令，但是不显示返回内容
+:!start notepad     	Windows 下启动 notepad，最前面可以加 silent
+:sil !start cmd     	Windows 下当前目录打开 cmd
+:%!prog             	运行文字过滤程序，如整理 json格式 :%!python -m json.tool
 
 ############################################################################
 # Quickfix 窗口
 ############################################################################
 
-:copen              打开 quickfix 窗口（查看编译，grep等信息）
-:copen 10           打开 quickfix 窗口，并且设置高度为 10
-:cclose             关闭 quickfix 窗口
-:cfirst             跳到 quickfix 中第一个错误信息
-:clast              跳到 quickfix 中最后一条错误信息
-:cc [nr]            查看错误 [nr]
-:cnext              跳到 quickfix 中下一个错误信息
-:cprev              跳到 quickfix 中上一个错误信息
+:copen              	打开 quickfix 窗口（查看编译，grep等信息）
+:copen 10           	打开 quickfix 窗口，并且设置高度为 10
+:cclose             	关闭 quickfix 窗口
+:cfirst             	跳到 quickfix 中第一个错误信息
+:clast              	跳到 quickfix 中最后一条错误信息
+:cc [nr]            	查看错误 [nr]
+:cnext              	跳到 quickfix 中下一个错误信息
+:cprev              	跳到 quickfix 中上一个错误信息
 
 ############################################################################
 # 拼写检查
 ############################################################################
 
-:set spell          打开拼写检查
-:set nospell        关闭拼写检查
-]s                  下一处错误拼写的单词
-[s                  上一处错误拼写的单词
-zg                  加入单词到拼写词表中
-zug                 撤销上一次加入的单词
-z=                  拼写建议
+:set spell          	打开拼写检查
+:set nospell        	关闭拼写检查
+]s                  	下一处错误拼写的单词
+[s                  	上一处错误拼写的单词
+zg                  	加入单词到拼写词表中
+zug                 	撤销上一次加入的单词
+z=                  	拼写建议
 
 ############################################################################
 # 代码折叠
 ############################################################################
 
-za                  切换折叠
-zA                  递归切换折叠
-zc                  折叠光标下代码
-zC                  折叠光标下所有代码
-zd                  删除光标下折叠
-zD                  递归删除所有折叠
-zE                  删除所有折叠
-zf                  创建代码折叠
-zF                  指定行数创建折叠
-zi                  切换折叠
-zm                  所有代码折叠一层
-zr                  所有代码打开一层
-zM                  折叠所有代码，设置 foldlevel=0，设置 foldenable
-zR                  打开所有代码，设置 foldlevel 为最大值
-zn                  折叠 none，重置 foldenable 并打开所有代码
-zN                  折叠 normal，重置 foldenable 并恢复所有折叠
-zo                  打开一层代码
-zO                  打开光标下所有代码折叠
+za                  	切换折叠
+zA                  	递归切换折叠
+zc                  	折叠光标下代码
+zC                  	折叠光标下所有代码
+zd                  	删除光标下折叠
+zD                  	递归删除所有折叠
+zE                  	删除所有折叠
+zf                  	创建代码折叠
+zF                  	指定行数创建折叠
+zi                  	切换折叠
+zm                  	所有代码折叠一层
+zr                  	所有代码打开一层
+zM                  	折叠所有代码，设置 foldlevel=0，设置 foldenable
+zR                  	打开所有代码，设置 foldlevel 为最大值
+zn                  	折叠 none，重置 foldenable 并打开所有代码
+zN                  	折叠 normal，重置 foldenable 并恢复所有折叠
+zo                  	打开一层代码
+zO                  	打开光标下所有代码折叠
 
 ############################################################################
 # 宏录制
 ############################################################################
 
-qa                  开始录制名字为 a 的宏
-q                   结束录制宏
-@a                  播放名字为 a 的宏
-@:                  播放上一个宏
+qa                  	开始录制名字为 a 的宏
+q                   	结束录制宏
+@a                  	播放名字为 a 的宏
+@:                  	播放上一个宏
 
 ############################################################################
 # 其他命令
 ############################################################################
 
-CTRL-E              向上卷屏
-CTRL-Y              向下卷屏
-CTRL-G              显示正在编辑的文件名，以及大小和位置信息
-g CTRL-G            显示文件的：大小，字符数，单词数和行数，可视模式下也可用
-zz                  调整光标所在行到屏幕中央
-zt                  调整光标所在行到屏幕上部
-zb                  调整光标所在行到屏幕下部
-ga                  显示光标下字符的 ascii 码或者 unicode 编码
-g8                  显示光标下字符的 utf-8 编码字节序
-gi                  回到上次进入插入的地方，并切换到插入模式
-K                   查询光标下单词的帮助
-ZZ                  保存文件（如果有改动的话），并关闭窗口
-CTRL-PgUp           上个标签页，GVim OK，部分终端软件需设置对应键盘码
-CTRL-PgDown         下个标签页，GVim OK，部分终端软件需设置对应键盘码
-CTRL-R CTRL-W       命令模式下插入光标下单词
-CTRL-INSERT         复制到系统剪贴板（GVIM）
-SHIFT-INSERT        粘贴系统剪贴板的内容（GVIM）
-:set ff=unix        设置换行为 unix
-:set ff=dos         设置换行为 dos
-:set ff?            查看换行设置
-:set nohl           清除搜索高亮
-:set termcap        查看会从终端接收什么以及会发送给终端什么命令
-:set guicursor=     解决 SecureCRT/PenguiNet 中 NeoVim 局部奇怪字符问题
-:set t_RS= t_SH=    解决 SecureCRT/PenguiNet 中 Vim8.0 终端功能奇怪字符
-:set fo+=a          开启文本段的实时自动格式化
-:earlier 15m        回退到15分钟前的文件内容
-:.!date             在当前窗口插入时间
-:%!xxd              开始二进制编辑
-:%!xxd -r           保存二进制编辑
-:r !curl -sL {URL}  读取 url 内容添加到光标后
-:g/^\s*$/d          删除空行
-:g/green/d          删除所有包含 green 的行
-:v/green/d          删除所有不包含 green 的行
-:g/gladiolli/#      搜索单词打印结果，并在结果前加上行号
-:g/ab.*cd.*efg/#    搜索包含 ab,cd 和 efg 的行，打印结果以及行号
-:v/./,/./-j         压缩空行
-:Man bash           在 Vim 中查看 man，先调用 :runtime! ftplugin/man.vim 激活
-/fred\|joe          搜索 fred 或者 joe
-/\<\d\d\d\d\>       精确搜索四个数字
-/^\n\{3}            搜索连续三个空行
+CTRL-E              	向上卷屏
+CTRL-Y              	向下卷屏
+CTRL-G              	显示正在编辑的文件名，以及大小和位置信息
+g CTRL-G            	显示文件的：大小，字符数，单词数和行数，可视模式下也可用
+zz                  	调整光标所在行到屏幕中央
+zt                  	调整光标所在行到屏幕上部
+zb                  	调整光标所在行到屏幕下部
+ga                  	显示光标下字符的 ascii 码或者 unicode 编码
+g8                  	显示光标下字符的 utf-8 编码字节序
+gi                  	回到上次进入插入的地方，并切换到插入模式
+K                   	查询光标下单词的帮助
+ZZ                  	保存文件（如果有改动的话），并关闭窗口
+CTRL-PgUp           	上个标签页，GVim OK，部分终端软件需设置对应键盘码
+CTRL-PgDown         	下个标签页，GVim OK，部分终端软件需设置对应键盘码
+CTRL-R CTRL-W       	命令模式下插入光标下单词
+CTRL-INSERT         	复制到系统剪贴板（GVIM）
+SHIFT-INSERT        	粘贴系统剪贴板的内容（GVIM）
+:set ff=unix        	设置换行为 unix
+:set ff=dos         	设置换行为 dos
+:set ff?            	查看换行设置
+:set nohl           	清除搜索高亮
+:set termcap        	查看会从终端接收什么以及会发送给终端什么命令
+:set guicursor=     	解决 SecureCRT/PenguiNet 中 NeoVim 局部奇怪字符问题
+:set t_RS= t_SH=    	解决 SecureCRT/PenguiNet 中 Vim8.0 终端功能奇怪字符
+:set fo+=a          	开启文本段的实时自动格式化
+:earlier 15m        	回退到15分钟前的文件内容
+:.!date             	在当前窗口插入时间
+:%!xxd              	开始二进制编辑
+:%!xxd -r           	保存二进制编辑
+:r !curl -sL {URL}  	读取 url 内容添加到光标后
+:g/^\s*$/d          	删除空行
+:g/green/d          	删除所有包含 green 的行
+:v/green/d          	删除所有不包含 green 的行
+:g/gladiolli/#      	搜索单词打印结果，并在结果前加上行号
+:g/ab.*cd.*efg/#    	搜索包含 ab,cd 和 efg 的行，打印结果以及行号
+:v/./,/./-j         	压缩空行
+:Man bash           	在 Vim 中查看 man，先调用 :runtime! ftplugin/man.vim 激活
+/fred\|joe          	搜索 fred 或者 joe
+/\<\d\d\d\d\>       	精确搜索四个数字
+/^\n\{3}            	搜索连续三个空行
 
