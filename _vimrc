@@ -374,6 +374,7 @@ Plugin 'VundleVim/Vundle.vim'           " Vundle插件管理工具
 Plugin 'altercation/vim-colors-solarized' " 配色方案
 Plugin 'molokai'		                " 配色方案
 Plugin 'colorizer'                      " css颜色显示插件
+Plugin 'mattn/emmet-vim'                " 前端代码补全
 Plugin 'DoxygenToolkit.vim'		        " 注释文档生成
 Plugin 'VimTweak'					    " 背景透明插件
 Plugin 'ervandew/supertab'              " 补全记忆插件
@@ -399,6 +400,16 @@ call vundle#end()
 let g:colorizer_fgcontrast = 0
 " 启动时不启用着色
 let g:colorizer_startup = 0
+
+"************************************************
+" emmet配置 前端补全工具
+" 参考：http://mounui.com
+"************************************************
+" 只在html和css文件中起作用
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstal
+" 修改Emmet的触发键
+let g:user_emmet_expandabbr_key = '<Tab>'
 
 "************************************************
 " VimTweak配置 界面配置工具
