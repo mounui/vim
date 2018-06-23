@@ -24,7 +24,7 @@ source $VIMRUNTIME/vimrc_example.vim
 "behave mswin
 " TODO 设置leader键
 let mapleader=" "
-let g:maplesder=" "
+let g:mapleader=" "
 " 开启语法高亮
 syntax on
 
@@ -403,13 +403,15 @@ let g:colorizer_startup = 0
 
 "************************************************
 " emmet配置 前端补全工具
-" 参考：http://mounui.com
+" 参考：http://mounui.com/291.html
 "************************************************
 " 只在html和css文件中起作用
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstal
-" 修改Emmet的触发键
-let g:user_emmet_expandabbr_key = '<Tab>'
+" 修改Emmet扩展键
+let g:user_emmet_expandabbr_key = '<C-e>'
+" 修改Emmet默认快捷键
+"let g:user_emmet_leader_key = '<C-e>'
 
 "************************************************
 " VimTweak配置 界面配置工具
