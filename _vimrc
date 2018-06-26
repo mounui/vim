@@ -209,7 +209,7 @@ au FocusGained * :set relativenumber
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 " 普通模式下绝对、相对行号切换映射
-nmap <C-N> :call NumberToggle()<CR>
+nnoremap <C-N> :call NumberToggle()<CR>
 fun! NumberToggle()
 	if (&relativenumber == 1)
 	    set norelativenumber number
@@ -245,16 +245,16 @@ set ttyfast
 " 离开插入模式后自动关闭预览窗口
 au InsertLeave * if pumvisible() == 0|pclose|endif
 " 回车即选中补全提示列表里当前项
-imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " 自动补全选择选项方向键映射
-imap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-imap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-imap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-imap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 " 复制粘贴映射（与外界互通） 参考：http://mounui.com/236.html
-vmap <C-C> "*y
-nmap <C-V> "*p
+vnoremap <C-C> "*y
+nnoremap <C-V> "*p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " HotKey Settings 自定义快捷键设置
@@ -266,21 +266,21 @@ map <Left> <Nop>
 map <Right> <Nop>
 
 " 同物理行上跳转
-nmap k gk
-nmap j gj
+nnoremap k gk
+nnoremap j gj
 
 " kj替换<Esc>
-imap kj <Esc>
+inoremap kj <Esc>
 " 快速进入命令行
-nmap ; :
+nnoremap ; :
 
 " 去掉搜索高亮
 map <silent> <leader>/ :noh<CR>
 
 " <F1> 退出
-nmap <F1> <Esc>
+nnoremap <F1> <Esc>
 " <F2> 行号开关
-nmap <F2> :call HideNumber()<CR>
+nnoremap <F2> :call HideNumber()<CR>
 fun! HideNumber()
   if(&relativenumber == &number)
     set relativenumber! number!
@@ -292,14 +292,14 @@ fun! HideNumber()
   set number?
 endfunc
 " <F3> 可打印字符切换
-nmap <F3> :set list! list?<CR>
+nnoremap <F3> :set list! list?<CR>
 " <F4> 换行切换
-nmap <F4> :set wrap! wrap?<CR>
+nnoremap <F4> :set wrap! wrap?<CR>
 " <F5> 粘贴模式开关
 "set pastetoggle=<F5>
-nmap <F5> :set paste! paste?<CR>
+nnoremap <F5> :set paste! paste?<CR>
 " <F6> 语法开关，关闭语法可以加快大文件的展示
-nmap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
 " 分屏窗口移动
 map <C-j> <C-w>j
@@ -308,18 +308,18 @@ map <C-h> <C-w>h
 map <C-l> <C-w>l
 
 " 命令行模式增强，ctrl-a到行首，-e到行尾
-cmap <C-j> <t_kd>
-cmap <C-k> <t_ku>
-cmap <C-a> <Home>
-cmap <C-e> <End>
+cnoremap <c-j> <t_kd>
+cnoremap <C-k> <t_ku>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 
 " 保持搜索模式始终在屏幕中间
-nmap <silent> n nzz
-nmap <silent> N Nzz
-nmap <silent> * *zz
-nmap <silent> # #zz
-nmap <silent> g* g*zz
-nmap <silent> g# g#zz
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
 
 " 标签页tab切换
 map <leader>tj :tabnext<CR>
@@ -332,19 +332,19 @@ map <leader>te :tabedit<CR>
 map <leader>td :tabclose<CR>
 map <leader>tm :tabm<CR>
 " 正常模式下切换到确切的tab
-map <leader>1 1gt
-map <leader>2 2gt
-map <leader>3 3gt
-map <leader>4 4gt
-map <leader>5 5gt
-map <leader>6 6gt
-map <leader>7 7gt
-map <leader>8 8gt
-map <leader>9 9gt
-map <leader>0 :tablast<CR>
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<CR>
 " tab切换
 let g:last_active_tab = 1   " 当前标签页编号
-nmap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<CR>
+nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<CR>
 au TabLeave * let g:last_active_tab = tabpagenr()
 
 " 全选
@@ -381,6 +381,7 @@ Plugin 'ervandew/supertab'              " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
 Plugin 'w0rp/ale'                       " 代码检查
 Plugin 'junegunn/fzf'                   " 搜索工具
+Plugin 'junegunn/fzf.vim'                   " 搜索工具
 
 call vundle#end()
 
@@ -504,3 +505,80 @@ let g:DoxygenToolkit_authorName="mounui <maojunhui5214@163.com>"
 " Fun
 let g:DoxygenToolkit_briefTag_funcName="yes"    " 显示函数名
 let g:doxygen_enhanced_color=1
+
+"************************************************
+" fzf配置 搜索工具
+" 参考：https://mounui.com
+"************************************************
+" If installed using Homebrew
+"set rtp+=$VIM/vimfiles/bundle/fzf/
+" If installed using git
+set rtp+=$VIM/vimfiles/bundle/fzf.vim/
+"nnoremap <silent> <Leader>f :Files<CR>
+"nnoremap <silent> <Leader>b :Buffers<CR>
+if has('nvim') || has('gui_running')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
+
+" Hide statusline of terminal buffer
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" nnoremap <silent> <Leader><Leader> :Files<CR>
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <Leader>C        :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>l        :Lines<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+nnoremap <silent> <Leader>`        :Marks<CR>
+" nnoremap <silent> q: :History:<CR>
+" nnoremap <silent> q/ :History/<CR>
+
+inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+inoremap <expr> <c-x><c-d> fzf#vim#complete#path('blsd')
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+function! s:plug_help_sink(line)
+  let dir = g:plugs[a:line].dir
+  for pat in ['doc/*.txt', 'README.md']
+    let match = get(split(globpath(dir, pat), "\n"), 0, '')
+    if len(match)
+      execute 'tabedit' match
+      return
+    endif
+  endfor
+  tabnew
+  execute 'Explore' dir
+endfunction
+
+command! PlugHelp call fzf#run(fzf#wrap({
+  \ 'source': sort(keys(g:plugs)),
+  \ 'sink':   function('s:plug_help_sink')}))
