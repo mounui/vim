@@ -380,8 +380,8 @@ Plugin 'VimTweak'					    " 背景透明插件
 Plugin 'ervandew/supertab'              " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
 Plugin 'w0rp/ale'                       " 代码检查
-Plugin 'junegunn/fzf'                   " 搜索工具
-Plugin 'junegunn/fzf.vim'                   " 搜索工具
+Plugin 'junegunn/fzf', { 'dir': '$VIM/vimfiles/bundle/fzf', 'do': './install --all' }                   " 搜索工具
+Plugin 'junegunn/fzf.vim'               " 搜索工具
 
 call vundle#end()
 
