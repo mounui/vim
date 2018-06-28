@@ -380,7 +380,7 @@ Plugin 'VimTweak'					    " 背景透明插件
 Plugin 'ervandew/supertab'              " 补全记忆插件
 Plugin 'AutoComplPop'                   " 自动代码提示
 Plugin 'w0rp/ale'                       " 代码检查
-Plugin 'junegunn/fzf', { 'dir': '$VIM/vimfiles/bundle/fzf', 'do': './install --all' }                   " 搜索工具
+Plugin 'junegunn/fzf',                  " 搜索工具
 Plugin 'junegunn/fzf.vim'               " 搜索工具
 
 call vundle#end()
@@ -508,14 +508,8 @@ let g:doxygen_enhanced_color=1
 
 "************************************************
 " fzf配置 搜索工具
-" 参考：https://mounui.com
+" 参考：https://mounui.com/306.html
 "************************************************
-" If installed using Homebrew
-"set rtp+=$VIM/vimfiles/bundle/fzf/
-" If installed using git
-set rtp+=$VIM/vimfiles/bundle/fzf.vim/
-"nnoremap <silent> <Leader>f :Files<CR>
-"nnoremap <silent> <Leader>b :Buffers<CR>
 if has('nvim') || has('gui_running')
   let $FZF_DEFAULT_OPTS .= ' --inline-info'
 endif
@@ -543,10 +537,10 @@ let g:fzf_colors =
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" nnoremap <silent> <Leader><Leader> :Files<CR>
+" 键盘映射
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nnoremap <silent> <Leader>C        :Colors<CR>
-nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>b        :Buffers<CR>
 nnoremap <silent> <Leader>l        :Lines<CR>
 nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
