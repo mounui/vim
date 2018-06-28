@@ -382,6 +382,14 @@ Plugin 'AutoComplPop'                   " 自动代码提示
 Plugin 'w0rp/ale'                       " 代码检查
 Plugin 'junegunn/fzf',                  " 搜索工具
 Plugin 'junegunn/fzf.vim'               " 搜索工具
+Plugin 'junegunn/limelight.vim'         " 界面设置
+Plugin 'junegunn/goyo.vim'              " 配合limelight使用
+Plugin 'haya14busa/incsearch.vim'       " 搜索工具
+Plugin 'mhinz/vim-signify'              " 版本控制
+Plugin 'terryma/vim-multiple-cursors'   " 多光标输入
+Plugin 'suan/vim-instant-markdown'      " Markdown
+Plugin 'pangloss/vim-javascript'        " Javascript
+Plugin 'tpope/vim-commentary'           " 快速注释
 
 call vundle#end()
 
@@ -576,3 +584,18 @@ endfunction
 command! PlugHelp call fzf#run(fzf#wrap({
   \ 'source': sort(keys(g:plugs)),
   \ 'sink':   function('s:plug_help_sink')}))
+
+"************************************************
+" limelight配置
+" 参考：https://mounui.com
+"************************************************
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'red'
+let g:limelight_conceal_ctermfg = 80
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'purple'
+let g:limelight_conceal_guifg = '#5815CE'
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
