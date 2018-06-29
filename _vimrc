@@ -586,16 +586,22 @@ command! PlugHelp call fzf#run(fzf#wrap({
   \ 'sink':   function('s:plug_help_sink')}))
 
 "************************************************
-" limelight配置
-" 参考：https://mounui.com
+" limelight goyo配置
+" 参考：https://mounui.com/311.html
 "************************************************
 " Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'red'
-let g:limelight_conceal_ctermfg = 80
-
+let g:limelight_conceal_ctermfg = 'Gray'
+let g:limelight_conceal_ctermfg = 240
 " Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'purple'
-let g:limelight_conceal_guifg = '#5815CE'
-
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+" 包含的前后段的数量
+let g:limelight_paragraph_span = 1
+" Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+" 进入goyo模式后自动触发limelight，退出则关闭
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+" limelight键盘映射
+nmap <silent> <leader>g      :Goyo<CR>
+xmap <silent> <leader>g      :Goyo<CR>
