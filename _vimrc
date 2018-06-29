@@ -390,6 +390,7 @@ Plugin 'terryma/vim-multiple-cursors'   " 多光标输入
 Plugin 'suan/vim-instant-markdown'      " Markdown
 Plugin 'pangloss/vim-javascript'        " Javascript
 Plugin 'tpope/vim-commentary'           " 快速注释
+Plugin 'vim-airline/vim-airline'        " 状态栏美化
 
 call vundle#end()
 
