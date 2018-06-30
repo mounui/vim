@@ -650,3 +650,19 @@ omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
 omap ac <plug>(signify-motion-outer-pending)
 xmap ac <plug>(signify-motion-outer-visual)
+
+"************************************************
+" vim-multiple-cursors配置 多光标输入
+" 参考：https://mounui.com/319.html
+"************************************************
+" 关闭插件默认映射
+let g:multi_cursor_use_default_mapping = 0
+" mapping
+let g:multi_cursor_start_word_key      = '<C-d>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+"let g:multi_cursor_start_key           = 'g<C-d>'
+"let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-d>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
