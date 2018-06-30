@@ -609,7 +609,7 @@ xmap <silent> <leader>g      :Goyo<CR>
 
 "************************************************
 " incsearch配置
-" 参考：https://mounui.com/311.html
+" 参考：https://mounui.com/314.html
 "************************************************
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -625,24 +625,26 @@ map g# <Plug>(incsearch-nohl-g#)
 
 "************************************************
 " signify配置 版本控制
-" 参考：https://mounui.com/
+" 参考：https://mounui.com/152.html
 "************************************************
-" 设置使用的版本控制器
+" 设置要检查的VCS
 let g:signify_vcs_list = ['git']
+" 插入模式下指定updatetime时间后无操作将缓存区交换文件写入磁盘
 let g:signify_cursorhold_insert     = 1
+" 正常模式下指定updatetime时间后无操作将缓存区交换文件写入磁盘
 let g:signify_cursorhold_normal     = 1
+" 缓冲区被修改时更新符号
 let g:signify_update_on_bufenter    = 0
+" vim获取焦点时更新符号
 let g:signify_update_on_focusgained = 1
-
+" 键盘映射
 nnoremap <leader>gt :SignifyToggle<CR>
 nnoremap <leader>gh :SignifyToggleHighlight<CR>
 nnoremap <leader>gr :SignifyRefresh<CR>
 nnoremap <leader>gd :SignifyDebug<CR>
-
 " hunk jumping
 nmap <leader>gj <plug>(signify-next-hunk)
 nmap <leader>gk <plug>(signify-prev-hunk)
-
 " hunk text object
 omap ic <plug>(signify-motion-inner-pending)
 xmap ic <plug>(signify-motion-inner-visual)
