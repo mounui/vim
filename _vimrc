@@ -666,3 +666,14 @@ let g:multi_cursor_next_key            = '<C-d>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+"************************************************
+" vim-instant-markdown配置 Markdown标记即时预览
+" 参考：https://mounui.com/319.html
+"************************************************
+" 关闭实时预览
+let g:instant_markdown_slow = 1
+" 关闭打开文件自动预览
+"let g:instant_markdown_autostart = 0
+" 阻止外部资源加载
+"let g:instant_markdown_allow_external_content = 0
