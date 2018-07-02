@@ -669,7 +669,7 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 "************************************************
 " vim-instant-markdown配置 Markdown标记即时预览
-" 参考：https://mounui.com/319.html
+" 参考：https://mounui.com/322.html
 "************************************************
 " 关闭实时预览
 let g:instant_markdown_slow = 1
@@ -677,3 +677,19 @@ let g:instant_markdown_slow = 1
 "let g:instant_markdown_autostart = 0
 " 阻止外部资源加载
 "let g:instant_markdown_allow_external_content = 0
+
+"************************************************
+" vim-javascript配置 javascript语法高亮、缩进
+" 参考：https://mounui.com/325.html
+"************************************************
+" 为jsdoc文档启用语法突出显示
+let g:javascript_plugin_jsdoc = 1
+" 为ngdoc启用额外语法突出显示
+let g:javascript_plugin_ngdoc = 1
+" 为Flow启用语法突出显示
+let g:javascript_plugin_flow = 1
+" 基于语法文件启用JavaScript的代码折叠，可能会影响性能
+augroup  javascript_folding 
+    au!
+    au FileType javascript setlocal fdm=syntax 
+augroup  END
