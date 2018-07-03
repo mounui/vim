@@ -391,6 +391,7 @@ Plugin 'suan/vim-instant-markdown'      " Markdown
 Plugin 'pangloss/vim-javascript'        " Javascript
 Plugin 'tpope/vim-commentary'           " 快速注释
 Plugin 'vim-airline/vim-airline'        " 状态栏美化
+Plugin 'vim-airline/vim-airline-themes' " airline主题
 
 call vundle#end()
 
@@ -693,3 +694,15 @@ augroup  javascript_folding
     au!
     au FileType javascript setlocal fdm=syntax 
 augroup  END
+
+"************************************************
+" vim-airline配置 状态栏美化
+" 参考：https://mounui.com/
+"************************************************
+" 设置主题
+let g:airline_theme="dark" 
+" 安装字体后必须设置此项
+"let g:airline_powerline_fonts = 1
+" 打开tabline功能,方便查看Buffer和切换
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
