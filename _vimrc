@@ -698,7 +698,7 @@ augroup  END
 
 "************************************************
 " vim-airline配置 状态栏美化
-" 参考：https://mounui.com/
+" 参考：https://mounui.com/331.html
 "************************************************
 " Vim 在与屏幕/键盘交互时使用的编码(取决于实际的终端的设定)        
 set encoding=utf-8
@@ -729,6 +729,5 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " 映射切换buffer的键位
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
- 
+" 设置字体 
 set guifont=Powerline_Consolas:h14:cANSI   
-"字体DejaVu Sans Mono for Powerline，需放在配置文件最后面
