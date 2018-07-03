@@ -1,193 +1,194 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIMÅäÖÃ
+" VIMé…ç½®
 " Author: mounui
 " Email: maojunhui5214@163.com
 " Blog: http://mounui.com
 " Version: 2.0
 " Last Modify: 2018-05-20 23:12
 " Sections:
-"       -- Load Configuration ¼ÓÔØÅäÖÃ
-"       -- Encode Settings ±àÂëÉèÖÃ
-"       -- General Settings »ù´¡ÅäÖÃ
-"       -- View Settings ÏÔÊ¾ÉèÖÃ
-"       -- Others Settings ÆäËûÉèÖÃ
-"       -- HotKey Settings ×Ô¶¨Òå¿ì½İ¼ü
-"       -- VundleÅäÖÃ ²å¼ş¹ÜÀí
+"       -- Load Configuration åŠ è½½é…ç½®
+"       -- Encode Settings ç¼–ç è®¾ç½®
+"       -- General Settings åŸºç¡€é…ç½®
+"       -- View Settings æ˜¾ç¤ºè®¾ç½®
+"       -- Others Settings å…¶ä»–è®¾ç½®
+"       -- HotKey Settings è‡ªå®šä¹‰å¿«æ·é”®
+"       -- Vundleé…ç½® æ’ä»¶ç®¡ç†
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Load Configuration ¼ÓÔØÅäÖÃ
+" Load Configuration åŠ è½½é…ç½®
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ä£·Âwindows¿ì½İ¼ü
+" æ¨¡ä»¿windowså¿«æ·é”®
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
-" TODO ÉèÖÃleader¼ü
+" TODO è®¾ç½®leaderé”®
 let mapleader=" "
 let g:mapleader=" "
-" ¿ªÆôÓï·¨¸ßÁÁ
+" å¼€å¯è¯­æ³•é«˜äº®
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Encode Settings ±àÂëÉèÖÃ
-" ²Î¿¼£ºhttp://mounui.com/147.html
+" Encode Settings ç¼–ç è®¾ç½®
+" å‚è€ƒï¼šhttp://mounui.com/147.html
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ÓïÑÔÉèÖÃ
-" ²Ëµ¥ÓïÑÔ
+" è¯­è¨€è®¾ç½®
+" èœå•è¯­è¨€
 set langmenu=zh_CN.UTF-8
-" °ïÖúÎÄµµ
+" å¸®åŠ©æ–‡æ¡£
 set helplang=cn
 
-" ÉèÖÃÎÄ¼ş±àÂëÎªutf-8
+" è®¾ç½®æ–‡ä»¶ç¼–ç ä¸ºutf-8
 set encoding=utf-8
-" ÆÕÍ¨Ä£Ê½ÏÂµÄ±àÂëÉèÖÃ
+" æ™®é€šæ¨¡å¼ä¸‹çš„ç¼–ç è®¾ç½®
 "set termencoding=utf-8
-" ×Ô¶¯ÅĞ¶Ï±àÂëÊÇÊ±ÒÀ´Î³¢ÊÔÒÔÏÂ±àÂë
+" è‡ªåŠ¨åˆ¤æ–­ç¼–ç æ˜¯æ—¶ä¾æ¬¡å°è¯•ä»¥ä¸‹ç¼–ç 
 set fencs=utf-8,gbk,chinese,big5,cp936,gb18030,gb2312,utf-16
+set fenc=utf-8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
-" Óöµ½UnicodeÖµ´óÓÚ255µÄÎÄ±¾£¬²»±ØµÈµ½¿Õ¸ñÔÚÕÛĞĞ
+" é‡åˆ°Unicodeå€¼å¤§äº255çš„æ–‡æœ¬ï¼Œä¸å¿…ç­‰åˆ°ç©ºæ ¼åœ¨æŠ˜è¡Œ
 set formatoptions+=m
-" ºÏ²¢Á½ĞĞÖĞÎÄÊ±£¬²»ÔÚÖĞ¼ä¼Ó¿Õ¸ñ
+" åˆå¹¶ä¸¤è¡Œä¸­æ–‡æ—¶ï¼Œä¸åœ¨ä¸­é—´åŠ ç©ºæ ¼
 set formatoptions+=B
 
-" vimÔÚwindowsÏÂµÄ±àÂëÉèÖÃ
+" vimåœ¨windowsä¸‹çš„ç¼–ç è®¾ç½®
 if has("win32")
     set enc=chinese
 else
     set enc=utf-8
 endif
 
-"½â¾ö²Ëµ¥ÂÒÂë
+"è§£å†³èœå•ä¹±ç 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General Settings »ù´¡ÅäÖÃ
+" General Settings åŸºç¡€é…ç½®
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Æô¶¯µÄÊ±ºò²»ÏÔÊ¾Ô®ÖúÎÚ¸É´ï¶ùÍ¯ÌáÊ¾
+" å¯åŠ¨çš„æ—¶å€™ä¸æ˜¾ç¤ºæ´åŠ©ä¹Œå¹²è¾¾å„¿ç«¥æç¤º
 set shortmess=atI
-" ÀúÊ·ÈİÁ¿
+" å†å²å®¹é‡
 set history=1000
-" Õë¶Ô²»Í¬ÎÄ¼şÀàĞÍ²ÉÓÃ²»Í¬µÄËõ½ø¸ñÊ½
+" é’ˆå¯¹ä¸åŒæ–‡ä»¶ç±»å‹é‡‡ç”¨ä¸åŒçš„ç¼©è¿›æ ¼å¼
 "filetype indent on
-" ÔÊĞíÊ¹ÓÃ²å¼ş
+" å…è®¸ä½¿ç”¨æ’ä»¶
 "filetype plugin on
-" ¿ªÆôÎÄ¼şÀàĞÍ¼ì²â£¬ÆôÓÃ²å¼şºÍËõ½ø
+" å¼€å¯æ–‡ä»¶ç±»å‹æ£€æµ‹ï¼Œå¯ç”¨æ’ä»¶å’Œç¼©è¿›
 filetype plugin indent on
-" ²»¼ì²âÎÄ¼şÀàĞÍ
+" ä¸æ£€æµ‹æ–‡ä»¶ç±»å‹
 "filetype off
-" ÎÄ¼şĞŞ¸ÄÖ®ºó×Ô¶¯ÔØÈë
+" æ–‡ä»¶ä¿®æ”¹ä¹‹åè‡ªåŠ¨è½½å…¥
 set autoread
-" ±¸·İµ½ÁíÒ»¸öÎ»ÖÃ
+" å¤‡ä»½åˆ°å¦ä¸€ä¸ªä½ç½®
 " set bk
 " set backupext=.bak
 " set backupdir=/tmp/vimbak/
-" ´Ó²»±¸·İ
+" ä»ä¸å¤‡ä»½
 set nobackup
-" ½ûÖ¹Éú³ÉÁÙÊ±ÎÄ¼ş
+" ç¦æ­¢ç”Ÿæˆä¸´æ—¶æ–‡ä»¶
 set noswapfile
-" ²»²úÉúnuÎÄ¼ş
+" ä¸äº§ç”Ÿnuæ–‡ä»¶
 set noundofile
-" ÍË³övimºóÄÚÈİÏÔÊ¾ÔÚÖÕ¶ËÆÁÄ»£¬¿ÉÓÃÓÚ²é¿´ºÍ¸´ÖÆ
+" é€€å‡ºvimåå†…å®¹æ˜¾ç¤ºåœ¨ç»ˆç«¯å±å¹•ï¼Œå¯ç”¨äºæŸ¥çœ‹å’Œå¤åˆ¶
 "set t_ti= t_te=
-" ²»ÆôÓÃÊó±ê
+" ä¸å¯ç”¨é¼ æ ‡
 set mouse-=a
-" ÆôÓÃÊó±ê
+" å¯ç”¨é¼ æ ‡
 "set mouse=a
-" ÊäÈë×Ö·û²»Òş²ØÊó±ê
+" è¾“å…¥å­—ç¬¦ä¸éšè—é¼ æ ‡
 " set nomousehide
-" È¥µôÊäÈë´íÎóµÄÌáÊ¾Òô
+" å»æ‰è¾“å…¥é”™è¯¯çš„æç¤ºéŸ³
 set novisualbell
 set noerrorbells
 set t_vb=
 set tm=500
-" Ä§Êõ
+" é­”æœ¯
 set magic
-" ÅäÖÃbackspace ´ÓĞĞÊ×ºÍĞĞÄ©¿ÉÒÔÌøµ½ÁíÒ»ĞĞ
+" é…ç½®backspace ä»è¡Œé¦–å’Œè¡Œæœ«å¯ä»¥è·³åˆ°å¦ä¸€è¡Œ
 " set backspace=eol,start,indent
 " set whichwrap+=<,>,h,l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" View Settings ÏÔÊ¾ÉèÖÃ
+" View Settings æ˜¾ç¤ºè®¾ç½®
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GUI½çÃæÏÂ´°¿Ú×ÖÌåÉèÖÃ
-" ÉèÖÃ´°¿ÚÎ»ÖÃ £¨¾àÀëÆÁÄ»×óÉÏ½ÇµÄ¾àÀë£©
+" GUIç•Œé¢ä¸‹çª—å£å­—ä½“è®¾ç½®
+" è®¾ç½®çª—å£ä½ç½® ï¼ˆè·ç¦»å±å¹•å·¦ä¸Šè§’çš„è·ç¦»ï¼‰
 "winpos 5 5
-" ÉèÖÃ´°¿Ú´óĞ¡ £¨40ĞĞ£¬155ÁĞ£©
+" è®¾ç½®çª—å£å¤§å° ï¼ˆ40è¡Œï¼Œ155åˆ—ï¼‰
 "set lines=40 columns=155
-" ÉèÖÃ×ÖÌå £¨Consolas×ÖÌå ´óĞ¡14£©
+" è®¾ç½®å­—ä½“ ï¼ˆConsolaså­—ä½“ å¤§å°14ï¼‰
 set guifont=Consolas:h14:cANSI
 
-" Òş²Ø¹¤¾ßÀ¸
+" éšè—å·¥å…·æ 
 set guioptions-=T
-"Òş²Ø²Ëµ¥À¸
+"éšè—èœå•æ 
 set guioptions-=m
-"ÉèÖÃÅäÉ«·½°¸
+"è®¾ç½®é…è‰²æ–¹æ¡ˆ
 colorscheme molokai
-" ÔÚ×´Ì¬À¸ÏÔÊ¾ÕıÔÚÊäÈëµÄÃüÁî
+" åœ¨çŠ¶æ€æ æ˜¾ç¤ºæ­£åœ¨è¾“å…¥çš„å‘½ä»¤
 " set showcmd
-" ÔÚ×óÏÂ½ÇÏÔÊ¾µ±Ç°vimÄ£Ê½
+" åœ¨å·¦ä¸‹è§’æ˜¾ç¤ºå½“å‰vimæ¨¡å¼
 " set showmode
 
-" ÏÔÊ¾µ±Ç°ÁĞºÅ
+" æ˜¾ç¤ºå½“å‰åˆ—å·
 set ruler
-" Í»³öÏÔÊ¾µ±Ç°ÁĞ
+" çªå‡ºæ˜¾ç¤ºå½“å‰åˆ—
 " set cursorcolumn
-" Í»³öÏÔÊ¾µ±Ç°ĞĞ
+" çªå‡ºæ˜¾ç¤ºå½“å‰è¡Œ
 " set cursorline
-" ¹â±êÒÆ¶¯Ê±£¬ÉÏÏÂ·½×Ü»á±£ÁôÏàÓ¦ĞĞÊı
+" å…‰æ ‡ç§»åŠ¨æ—¶ï¼Œä¸Šä¸‹æ–¹æ€»ä¼šä¿ç•™ç›¸åº”è¡Œæ•°
 set scrolloff=5
-" TODO ÃüÁîĞĞ¸ß¶È
+" TODO å‘½ä»¤è¡Œé«˜åº¦
 "set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-" ÏÔÊ¾ĞĞºÅ
+" æ˜¾ç¤ºè¡Œå·
 set number
-" È¡Ïû»»ĞĞ
+" å–æ¶ˆæ¢è¡Œ
 set nowrap
-" Ã¿ĞĞ×î´ó×Ö·ûÊı£¬³¬³ö»»ĞĞ
+" æ¯è¡Œæœ€å¤§å­—ç¬¦æ•°ï¼Œè¶…å‡ºæ¢è¡Œ
 "set textwidth=80
 
-" ×Ô¶¯Ëõ½ø
+" è‡ªåŠ¨ç¼©è¿›
 set autoindent
-" ÖÇÄÜËõ½ø
+" æ™ºèƒ½ç¼©è¿›
 set smartindent
 
-" tabÏà¹Ø±ä¸ü
-" ÉèÖÃtab¼üµÄ¿í¶È
+" tabç›¸å…³å˜æ›´
+" è®¾ç½®tabé”®çš„å®½åº¦
 set tabstop=4
-" Ã¿´ÎËõ½ø¶ÔÓ¦µÄ¿Õ¸ñÊı
+" æ¯æ¬¡ç¼©è¿›å¯¹åº”çš„ç©ºæ ¼æ•°
 set shiftwidth=4
-" ÍË¸ñ¼ü¿ÉÒÔÒ»´ÎÉ¾µô4¸ö¿Õ¸ñ
+" é€€æ ¼é”®å¯ä»¥ä¸€æ¬¡åˆ æ‰4ä¸ªç©ºæ ¼
 set softtabstop=4
 set smarttab
-" Tab×Ô¶¯×ª»¯Îª¿Õ¸ñ
+" Tabè‡ªåŠ¨è½¬åŒ–ä¸ºç©ºæ ¼
 set expandtab
 set shiftround
-" CÏµÁĞËõ½ø
+" Cç³»åˆ—ç¼©è¿›
 set cindent
 
-" ²åÈëÀ¨ºÅÊ±£¬¶ÌÔİÌø×ªµ½Æ¥ÅäµÄÀ¨ºÅÉÏ
+" æ’å…¥æ‹¬å·æ—¶ï¼ŒçŸ­æš‚è·³è½¬åˆ°åŒ¹é…çš„æ‹¬å·ä¸Š
 set showmatch
-" Ìø×ªµ½Åä¶ÔÀ¨ºÅÉÏµÄÊ±¼ä£¬Ä¬ÈÏ1/10 Ãë
+" è·³è½¬åˆ°é…å¯¹æ‹¬å·ä¸Šçš„æ—¶é—´ï¼Œé»˜è®¤1/10 ç§’
 set matchtime=2
 
-" ËÑË÷Ïà¹Ø
-" ËÑË÷ºöÂÔ´óĞ¡Ğ´
+" æœç´¢ç›¸å…³
+" æœç´¢å¿½ç•¥å¤§å°å†™
 set ignorecase
-" ÓĞÒ»¸ö»òÒÔÉÏ´óĞ´×ÖÄ¸Ê±ÈÔ´óĞ¡Ğ´Ãô¸Ğ
+" æœ‰ä¸€ä¸ªæˆ–ä»¥ä¸Šå¤§å†™å­—æ¯æ—¶ä»å¤§å°å†™æ•æ„Ÿ
 set smartcase
-" ¸ßÁÁsearchÎÄ±¾
+" é«˜äº®searchæ–‡æœ¬
 set hlsearch
-" ¿ªÆôÔöÁ¿ËÑË÷Ä£Ê½
+" å¼€å¯å¢é‡æœç´¢æ¨¡å¼
 set incsearch
 
-" ´úÂëÕÛµş
+" ä»£ç æŠ˜å 
 set foldenable
-" ÕÛµş·½·¨
+" æŠ˜å æ–¹æ³•
 set foldmethod=indent
-" ¹Ø±ÕµÄÕÛµş¼¶±ğ
+" å…³é—­çš„æŠ˜å çº§åˆ«
 set foldlevel=99
-" ÅäÖÃ´úÂëÕÛµş¼üÅÌÓ³Éä
+" é…ç½®ä»£ç æŠ˜å é”®ç›˜æ˜ å°„
 map <leader>zz :call ToggleFold()<CR>
 let g:FoldMethod = 0
 fun! ToggleFold()
@@ -200,15 +201,15 @@ fun! ToggleFold()
     endif
 endfun
 
-" Ïà¶ÔĞĞºÅ
+" ç›¸å¯¹è¡Œå·
 set relativenumber
-" vim»ñÈ¡½¹µãÊ±ÓÃÏà¶ÔĞĞºÅ£¬Ê§È¥½¹µãÊ±ÓÃ¾ø¶ÔĞĞºÅ
+" vimè·å–ç„¦ç‚¹æ—¶ç”¨ç›¸å¯¹è¡Œå·ï¼Œå¤±å»ç„¦ç‚¹æ—¶ç”¨ç»å¯¹è¡Œå·
 au FocusLost * :set norelativenumber
 au FocusGained * :set relativenumber
-" ²åÈëÄ£Ê½ÏÂÓÃ¾ø¶ÔĞĞºÅ£¬ÆÕÍ¨Ä£Ê½ÏÂÓÃÏà¶ÔĞĞºÅ
+" æ’å…¥æ¨¡å¼ä¸‹ç”¨ç»å¯¹è¡Œå·ï¼Œæ™®é€šæ¨¡å¼ä¸‹ç”¨ç›¸å¯¹è¡Œå·
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
-" ÆÕÍ¨Ä£Ê½ÏÂ¾ø¶Ô¡¢Ïà¶ÔĞĞºÅÇĞ»»Ó³Éä
+" æ™®é€šæ¨¡å¼ä¸‹ç»å¯¹ã€ç›¸å¯¹è¡Œå·åˆ‡æ¢æ˜ å°„
 nnoremap <C-N> :call NumberToggle()<CR>
 fun! NumberToggle()
 	if (&relativenumber == 1)
@@ -219,67 +220,67 @@ fun! NumberToggle()
 endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Others Settings ÆäËûÉèÖÃ
+" Others Settings å…¶ä»–è®¾ç½®
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vimrcÎÄ¼şĞŞ¸Äºó×Ô¶¯¼ÓÔØ
+" vimrcæ–‡ä»¶ä¿®æ”¹åè‡ªåŠ¨åŠ è½½
 if has("win32")
     autocmd! bufwritepost _vimrc source %
 else
     autocmd! bufwritepost .vimrc source %
 endif
 
-" ¹Ø±Õvi¼æÈİÄ£Ê½
+" å…³é—­viå…¼å®¹æ¨¡å¼
 set nocompatible
-" ÆôÓÃÏµÍ³¼ôÌù°å
+" å¯ç”¨ç³»ç»Ÿå‰ªè´´æ¿
 "set clipboard=unnamed
 
-" ×Ô¶¯²¹È« ²Î¿¼£ºhttp://mounui.com/212.html
-" ÈÃvim²¹È«²Ëµ¥ĞĞÎªºÍÒ»°ãIDEÒ»ÖÂ £¨Ê¹ÓÃ<C-p>,<C-n>µ¯³öÌáÊ¾´°¿Ú£©
+" è‡ªåŠ¨è¡¥å…¨ å‚è€ƒï¼šhttp://mounui.com/212.html
+" è®©vimè¡¥å…¨èœå•è¡Œä¸ºå’Œä¸€èˆ¬IDEä¸€è‡´ ï¼ˆä½¿ç”¨<C-p>,<C-n>å¼¹å‡ºæç¤ºçª—å£ï¼‰
 set completeopt=preview,menu
-" ÔöÇ¿Ä£Ê½ÖĞÃüÁîĞĞ×Ô¶¯Íê³É
+" å¢å¼ºæ¨¡å¼ä¸­å‘½ä»¤è¡Œè‡ªåŠ¨å®Œæˆ
 set wildmenu
-" ÎÄ¼şÄ£Ê½ÁĞ±í £¨ºöÂÔµÄÎÄ¼şÄ£Ê½£©
+" æ–‡ä»¶æ¨¡å¼åˆ—è¡¨ ï¼ˆå¿½ç•¥çš„æ–‡ä»¶æ¨¡å¼ï¼‰
 set wildignore+=*.swp,*.bak,*.pyc,*.class,.svn
-"set wildmode=list:longest  " ÁĞ±íĞÎÊ½Õ¹Ê¾ºòÑ¡
+"set wildmode=list:longest  " åˆ—è¡¨å½¢å¼å±•ç¤ºå€™é€‰
 set ttyfast
-" Àë¿ª²åÈëÄ£Ê½ºó×Ô¶¯¹Ø±ÕÔ¤ÀÀ´°¿Ú
+" ç¦»å¼€æ’å…¥æ¨¡å¼åè‡ªåŠ¨å…³é—­é¢„è§ˆçª—å£
 au InsertLeave * if pumvisible() == 0|pclose|endif
-" »Ø³µ¼´Ñ¡ÖĞ²¹È«ÌáÊ¾ÁĞ±íÀïµ±Ç°Ïî
+" å›è½¦å³é€‰ä¸­è¡¥å…¨æç¤ºåˆ—è¡¨é‡Œå½“å‰é¡¹
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-" ×Ô¶¯²¹È«Ñ¡ÔñÑ¡Ïî·½Ïò¼üÓ³Éä
+" è‡ªåŠ¨è¡¥å…¨é€‰æ‹©é€‰é¡¹æ–¹å‘é”®æ˜ å°„
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
-" ¸´ÖÆÕ³ÌùÓ³Éä£¨ÓëÍâ½ç»¥Í¨£© ²Î¿¼£ºhttp://mounui.com/236.html
+" å¤åˆ¶ç²˜è´´æ˜ å°„ï¼ˆä¸å¤–ç•Œäº’é€šï¼‰ å‚è€ƒï¼šhttp://mounui.com/236.html
 vnoremap <C-C> "*y
 nnoremap <C-V> "*p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" HotKey Settings ×Ô¶¨Òå¿ì½İ¼üÉèÖÃ
+" HotKey Settings è‡ªå®šä¹‰å¿«æ·é”®è®¾ç½®
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ¹Ø±Õ·½Ïò¼ü
+" å…³é—­æ–¹å‘é”®
 map <Up> <Nop>
 map <Down> <Nop>
 map <Left> <Nop>
 map <Right> <Nop>
 
-" Í¬ÎïÀíĞĞÉÏÌø×ª
+" åŒç‰©ç†è¡Œä¸Šè·³è½¬
 nnoremap k gk
 nnoremap j gj
 
-" kjÌæ»»<Esc>
+" kjæ›¿æ¢<Esc>
 inoremap kj <Esc>
-" ¿ìËÙ½øÈëÃüÁîĞĞ
+" å¿«é€Ÿè¿›å…¥å‘½ä»¤è¡Œ
 nnoremap ; :
 
-" È¥µôËÑË÷¸ßÁÁ
+" å»æ‰æœç´¢é«˜äº®
 map <silent> <leader>/ :noh<CR>
 
-" <F1> ÍË³ö
+" <F1> é€€å‡º
 nnoremap <F1> <Esc>
-" <F2> ĞĞºÅ¿ª¹Ø
+" <F2> è¡Œå·å¼€å…³
 nnoremap <F2> :call HideNumber()<CR>
 fun! HideNumber()
   if(&relativenumber == &number)
@@ -291,29 +292,29 @@ fun! HideNumber()
   endif
   set number?
 endfunc
-" <F3> ¿É´òÓ¡×Ö·ûÇĞ»»
+" <F3> å¯æ‰“å°å­—ç¬¦åˆ‡æ¢
 nnoremap <F3> :set list! list?<CR>
-" <F4> »»ĞĞÇĞ»»
+" <F4> æ¢è¡Œåˆ‡æ¢
 nnoremap <F4> :set wrap! wrap?<CR>
-" <F5> Õ³ÌùÄ£Ê½¿ª¹Ø
+" <F5> ç²˜è´´æ¨¡å¼å¼€å…³
 "set pastetoggle=<F5>
 nnoremap <F5> :set paste! paste?<CR>
-" <F6> Óï·¨¿ª¹Ø£¬¹Ø±ÕÓï·¨¿ÉÒÔ¼Ó¿ì´óÎÄ¼şµÄÕ¹Ê¾
+" <F6> è¯­æ³•å¼€å…³ï¼Œå…³é—­è¯­æ³•å¯ä»¥åŠ å¿«å¤§æ–‡ä»¶çš„å±•ç¤º
 nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
-" ·ÖÆÁ´°¿ÚÒÆ¶¯
+" åˆ†å±çª—å£ç§»åŠ¨
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
-" ÃüÁîĞĞÄ£Ê½ÔöÇ¿£¬ctrl-aµ½ĞĞÊ×£¬-eµ½ĞĞÎ²
+" å‘½ä»¤è¡Œæ¨¡å¼å¢å¼ºï¼Œctrl-aåˆ°è¡Œé¦–ï¼Œ-eåˆ°è¡Œå°¾
 cnoremap <c-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-" ±£³ÖËÑË÷Ä£Ê½Ê¼ÖÕÔÚÆÁÄ»ÖĞ¼ä
+" ä¿æŒæœç´¢æ¨¡å¼å§‹ç»ˆåœ¨å±å¹•ä¸­é—´
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
@@ -321,7 +322,7 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
 
-" ±êÇ©Ò³tabÇĞ»»
+" æ ‡ç­¾é¡µtabåˆ‡æ¢
 map <leader>tj :tabnext<CR>
 map <leader>tk :tabprev<CR>
 map <leader>tn :tabnext<CR>
@@ -331,7 +332,7 @@ map <leader>tl :tablast<CR>
 map <leader>te :tabedit<CR>
 map <leader>td :tabclose<CR>
 map <leader>tm :tabm<CR>
-" Õı³£Ä£Ê½ÏÂÇĞ»»µ½È·ÇĞµÄtab
+" æ­£å¸¸æ¨¡å¼ä¸‹åˆ‡æ¢åˆ°ç¡®åˆ‡çš„tab
 noremap <leader>1 1gt
 noremap <leader>2 2gt
 noremap <leader>3 3gt
@@ -342,16 +343,16 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<CR>
-" tabÇĞ»»
-let g:last_active_tab = 1   " µ±Ç°±êÇ©Ò³±àºÅ
+" tabåˆ‡æ¢
+let g:last_active_tab = 1   " å½“å‰æ ‡ç­¾é¡µç¼–å·
 nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<CR>
 au TabLeave * let g:last_active_tab = tabpagenr()
 
-" È«Ñ¡
+" å…¨é€‰
 map <leader>sa ggVG
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FileType Settings ÎÄ¼şÀàĞÍÉèÖÃ
+" FileType Settings æ–‡ä»¶ç±»å‹è®¾ç½®
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 au filetype python set tabstop=4 shiftwidth=4 expandtab ai
 au filetype ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
@@ -361,41 +362,41 @@ au BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript tabstop=2 shif
 au BufWinEnter *.php set mps-=<:>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VundleÅäÖÃ ²å¼ş¹ÜÀí¹¤¾ß
-" ÅäÖÃ²Î¿¼£ºhttp://mounui.com/179.html
+" Vundleé…ç½® æ’ä»¶ç®¡ç†å·¥å…·
+" é…ç½®å‚è€ƒï¼šhttp://mounui.com/179.html
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set nocompatible              " È¥³ıVIÒ»ÖÂĞÔ,±ØĞë
-" filetype off                  " ±ØĞë
+" set nocompatible              " å»é™¤VIä¸€è‡´æ€§,å¿…é¡»
+" filetype off                  " å¿…é¡»
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
 call vundle#begin('$VIM/vimfiles/bundle/')
 
-" ²å¼şÁĞ±í
-Plugin 'VundleVim/Vundle.vim'           " Vundle²å¼ş¹ÜÀí¹¤¾ß
-Plugin 'altercation/vim-colors-solarized' " ÅäÉ«·½°¸
-Plugin 'molokai'		                " ÅäÉ«·½°¸
-Plugin 'colorizer'                      " cssÑÕÉ«ÏÔÊ¾²å¼ş
-Plugin 'mattn/emmet-vim'                " Ç°¶Ë´úÂë²¹È«
-Plugin 'DoxygenToolkit.vim'		        " ×¢ÊÍÎÄµµÉú³É
-Plugin 'VimTweak'					    " ±³¾°Í¸Ã÷²å¼ş
-Plugin 'ervandew/supertab'              " ²¹È«¼ÇÒä²å¼ş
-Plugin 'AutoComplPop'                   " ×Ô¶¯´úÂëÌáÊ¾
-Plugin 'w0rp/ale'                       " ´úÂë¼ì²é
-Plugin 'junegunn/fzf',                  " ËÑË÷¹¤¾ß
-Plugin 'junegunn/fzf.vim'               " ËÑË÷¹¤¾ß
-Plugin 'junegunn/limelight.vim'         " ½çÃæÉèÖÃ
-Plugin 'junegunn/goyo.vim'              " ÅäºÏlimelightÊ¹ÓÃ
-Plugin 'haya14busa/incsearch.vim'       " ËÑË÷¹¤¾ß
-Plugin 'mhinz/vim-signify'              " °æ±¾¿ØÖÆ
-Plugin 'terryma/vim-multiple-cursors'   " ¶à¹â±êÊäÈë
+" æ’ä»¶åˆ—è¡¨
+Plugin 'VundleVim/Vundle.vim'           " Vundleæ’ä»¶ç®¡ç†å·¥å…·
+Plugin 'altercation/vim-colors-solarized' " é…è‰²æ–¹æ¡ˆ
+Plugin 'molokai'		                " é…è‰²æ–¹æ¡ˆ
+Plugin 'colorizer'                      " cssé¢œè‰²æ˜¾ç¤ºæ’ä»¶
+Plugin 'mattn/emmet-vim'                " å‰ç«¯ä»£ç è¡¥å…¨
+Plugin 'DoxygenToolkit.vim'		        " æ³¨é‡Šæ–‡æ¡£ç”Ÿæˆ
+Plugin 'VimTweak'					    " èƒŒæ™¯é€æ˜æ’ä»¶
+Plugin 'ervandew/supertab'              " è¡¥å…¨è®°å¿†æ’ä»¶
+Plugin 'AutoComplPop'                   " è‡ªåŠ¨ä»£ç æç¤º
+Plugin 'w0rp/ale'                       " ä»£ç æ£€æŸ¥
+Plugin 'junegunn/fzf',                  " æœç´¢å·¥å…·
+Plugin 'junegunn/fzf.vim'               " æœç´¢å·¥å…·
+Plugin 'junegunn/limelight.vim'         " ç•Œé¢è®¾ç½®
+Plugin 'junegunn/goyo.vim'              " é…åˆlimelightä½¿ç”¨
+Plugin 'haya14busa/incsearch.vim'       " æœç´¢å·¥å…·
+Plugin 'mhinz/vim-signify'              " ç‰ˆæœ¬æ§åˆ¶
+Plugin 'terryma/vim-multiple-cursors'   " å¤šå…‰æ ‡è¾“å…¥
 Plugin 'suan/vim-instant-markdown'      " Markdown
 Plugin 'pangloss/vim-javascript'        " Javascript
-Plugin 'tpope/vim-commentary'           " ¿ìËÙ×¢ÊÍ
-Plugin 'vim-airline/vim-airline'        " ×´Ì¬À¸ÃÀ»¯
-Plugin 'vim-airline/vim-airline-themes' " airlineÖ÷Ìâ
+Plugin 'tpope/vim-commentary'           " å¿«é€Ÿæ³¨é‡Š
+Plugin 'vim-airline/vim-airline'        " çŠ¶æ€æ ç¾åŒ–
+Plugin 'vim-airline/vim-airline-themes' " airlineä¸»é¢˜
 
 call vundle#end()
 
-" ¼òÒª°ïÖúÎÄµµ
+" ç®€è¦å¸®åŠ©æ–‡æ¡£
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
@@ -405,38 +406,38 @@ call vundle#end()
 " Put your non-Plugin stuff after this line
 
 "************************************************
-" colorizerÅäÖÃ cssÏÔÊ¾ÑÕÉ«²å¼ş
-" ²Î¿¼£ºhttp://mounui.com/208.html
+" colorizeré…ç½® cssæ˜¾ç¤ºé¢œè‰²æ’ä»¶
+" å‚è€ƒï¼šhttp://mounui.com/208.html
 "************************************************
-" ÏÔÊ¾ÉèÖÃ£¬Ä¬ÈÏÖµÎª2£»0£¬1 Èí»¯Ç°¾°É«£¬-1 ´¿É«ÏÔÊ¾
+" æ˜¾ç¤ºè®¾ç½®ï¼Œé»˜è®¤å€¼ä¸º2ï¼›0ï¼Œ1 è½¯åŒ–å‰æ™¯è‰²ï¼Œ-1 çº¯è‰²æ˜¾ç¤º
 let g:colorizer_fgcontrast = 0
-" Æô¶¯Ê±²»ÆôÓÃ×ÅÉ«
+" å¯åŠ¨æ—¶ä¸å¯ç”¨ç€è‰²
 let g:colorizer_startup = 0
 
 "************************************************
-" emmetÅäÖÃ Ç°¶Ë²¹È«¹¤¾ß
-" ²Î¿¼£ºhttp://mounui.com/291.html
+" emmeté…ç½® å‰ç«¯è¡¥å…¨å·¥å…·
+" å‚è€ƒï¼šhttp://mounui.com/291.html
 "************************************************
-" Ö»ÔÚhtmlºÍcssÎÄ¼şÖĞÆğ×÷ÓÃ
+" åªåœ¨htmlå’Œcssæ–‡ä»¶ä¸­èµ·ä½œç”¨
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstal
-" ĞŞ¸ÄEmmetÀ©Õ¹¼ü
+" ä¿®æ”¹Emmetæ‰©å±•é”®
 let g:user_emmet_expandabbr_key = '<C-e>'
-" ĞŞ¸ÄEmmetÄ¬ÈÏ¿ì½İ¼ü
+" ä¿®æ”¹Emmeté»˜è®¤å¿«æ·é”®
 "let g:user_emmet_leader_key = '<C-e>'
 
 "************************************************
-" VimTweakÅäÖÃ ½çÃæÅäÖÃ¹¤¾ß
-" ²Î¿¼£ºhttp://mounui.com/208.html
+" VimTweaké…ç½® ç•Œé¢é…ç½®å·¥å…·
+" å‚è€ƒï¼šhttp://mounui.com/208.html
 "************************************************
-" ×Ô¶¯Í¸Ã÷
+" è‡ªåŠ¨é€æ˜
 au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 230)
-" ×Ô¶¯×î´ó»¯
+" è‡ªåŠ¨æœ€å¤§åŒ–
 " au GUIEnter * call libcallnr("vimtweak.dll", "EnableMaximize", 1)
-" ×Ô¶¯ÖÃ¶¥
+" è‡ªåŠ¨ç½®é¡¶
 " au GUIEnter * call libcallnr("vimtweak.dll", "EnableTopMost", 1)
 
-" ¿ì½İ¼üÉèÖÃ
+" å¿«æ·é”®è®¾ç½®
 map <M-1> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 10) <CR>
 map <M-8> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 180) <CR>
 map <M-9> <Esc>:call libcallnr("vimtweak.dll", "SetAlpha", 230) <CR>
@@ -445,29 +446,29 @@ map _+ <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 1) <CR>
 map _- <ESC>:call libcallnr("vimtweak.dll", "EnableMaximize", 0) <CR>
 
 "************************************************
-" SuperTabÅäÖÃ ×Ô¶¯²¹È«¼ÇÒä²å¼ş
-" ²Î¿¼£ºhttp://mounui.com/217.html
+" SuperTabé…ç½® è‡ªåŠ¨è¡¥å…¨è®°å¿†æ’ä»¶
+" å‚è€ƒï¼šhttp://mounui.com/217.html
 "************************************************
-" ²¹È«Ä£Ê½
+" è¡¥å…¨æ¨¡å¼
 let g:SuperTabRetainCompletionType = 2
-" ²¹È«·½Ê½
+" è¡¥å…¨æ–¹å¼
 let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 
 "************************************************
-" AutoComplPopÅäÖÃ ×Ô¶¯´úÂëÌáÊ¾²å¼ş
-" ²Î¿¼£ºhttp://mounui.com/225.html
+" AutoComplPopé…ç½® è‡ªåŠ¨ä»£ç æç¤ºæ’ä»¶
+" å‚è€ƒï¼šhttp://mounui.com/225.html
 "************************************************
-" ÊäÈëÒ»¸ö×ÖÄ¸¼´¿É²¹È«
+" è¾“å…¥ä¸€ä¸ªå­—æ¯å³å¯è¡¥å…¨
 "let g:acp_behaviorKeywordLength = 1
-" ×Ô¶¯µ¯³öÊÇÓÉ¼üÓ³Éä£¬¶ÔÓÚÍ¨¹ıÒÆ¶¯À´±ÜÃâ×Ô¶¯µ¯³öÊÇºÜÓĞÓÃ
+" è‡ªåŠ¨å¼¹å‡ºæ˜¯ç”±é”®æ˜ å°„ï¼Œå¯¹äºé€šè¿‡ç§»åŠ¨æ¥é¿å…è‡ªåŠ¨å¼¹å‡ºæ˜¯å¾ˆæœ‰ç”¨
 let g:AutoComplPop_MappingDriven = 1
-" ĞŞ¸ÄGUI¸ßÁÁ²ÎÊı ¸ÃÉèÖÃÈ«¾ÖÓĞĞ§
+" ä¿®æ”¹GUIé«˜äº®å‚æ•° è¯¥è®¾ç½®å…¨å±€æœ‰æ•ˆ
 hi Pmenu guibg=#444444
 hi PmenuSel ctermfg=7 ctermbg=4 guibg=#555555 guifg=#ffffff
 
-" ¼ÓÔØPHPº¯Êı×Öµä£¬ÅäÖÃPHPº¯Êı×Ô¶¯²¹È«£¬×¢ÒâÎÄ¼şÎ»ÖÃ
+" åŠ è½½PHPå‡½æ•°å­—å…¸ï¼Œé…ç½®PHPå‡½æ•°è‡ªåŠ¨è¡¥å…¨ï¼Œæ³¨æ„æ–‡ä»¶ä½ç½®
 au FileType php setlocal dict+=$VIM/vimfiles/bundle/AutoComplPop/dict/php_funclist.txt
-" PHPÌáÊ¾´¥·¢
+" PHPæç¤ºè§¦å‘
 if !exists('g:AutoComplPop_Behavior')
 	let g:AutoComplPop_Behavior = {}
 	let g:AutoComplPop_Behavior['php'] = []
@@ -479,46 +480,46 @@ if !exists('g:AutoComplPop_Behavior')
 endif
 
 "************************************************
-" aleÅäÖÃ Óï·¨¼ì²é²å¼ş
+" aleé…ç½® è¯­æ³•æ£€æŸ¥æ’ä»¶
 "************************************************
-" ±£³Ö²à±ßÀ¸¿É¼û
+" ä¿æŒä¾§è¾¹æ å¯è§
 let g:ale_sign_column_always = 1
-" ½ûÓÃÍ»³öÏÔÊ¾
+" ç¦ç”¨çªå‡ºæ˜¾ç¤º
 let g:ale_set_highlights = 0
-" ×Ô¶¨ÒåerrorºÍwarning±êÊ¶·û
+" è‡ªå®šä¹‰errorå’Œwarningæ ‡è¯†ç¬¦
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-" ÔÚvim×Ô´øµÄ×´Ì¬À¸ÖĞÕûºÏale
+" åœ¨vimè‡ªå¸¦çš„çŠ¶æ€æ ä¸­æ•´åˆale
 "let g:ale_statusline_format = ['X %d', '! %d', 'O ok']
-" ÏÔÊ¾LinterÃû³Æ,³ö´í»ò¾¯¸æµÈÏà¹ØĞÅÏ¢
+" æ˜¾ç¤ºLinteråç§°,å‡ºé”™æˆ–è­¦å‘Šç­‰ç›¸å…³ä¿¡æ¯
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" Ö»ÓĞÔÚÎÄ¼ş±£´æÊ±¼ì²é
+" åªæœ‰åœ¨æ–‡ä»¶ä¿å­˜æ—¶æ£€æŸ¥
 "let g:ale_fix_on_save = 1
-" ¼üÈëÊ±²»¼ì²é
+" é”®å…¥æ—¶ä¸æ£€æŸ¥
 "let g:ale_lint_on_text_changed = 'never'
-" ½øÈëÊ±²»¼ì²é
+" è¿›å…¥æ—¶ä¸æ£€æŸ¥
 "let g:ale_lint_on_entere = 0
 
 "************************************************
-" DoxygenToolkitÅäÖÃ ×¢ÊÍ²å¼ş
-" ²Î¿¼£ºhttp://mounui.com/202.html
+" DoxygenToolkité…ç½® æ³¨é‡Šæ’ä»¶
+" å‚è€ƒï¼šhttp://mounui.com/202.html
 "************************************************
 " Lincese
 let g:DoxygenToolkit_licenseTag = "\<enter>Copyright (C) 2018 http://mounui.com\<enter>If you have any questions, please contact me email:maojunhui5214@163.com\<enter>You can also leave a message on my blog."
-" ×¢ÊÍ¿éÊ×Î²
+" æ³¨é‡Šå—é¦–å°¾
 let g:DoxygenToolkit_blockHeader="************************Header*************************"
 let g:DoxygenToolkit_blockFooter="************************Footer*************************"
 " Author
 let g:DoxygenToolkit_authorName="mounui <maojunhui5214@163.com>"
 " Fun
-let g:DoxygenToolkit_briefTag_funcName="yes"    " ÏÔÊ¾º¯ÊıÃû
+let g:DoxygenToolkit_briefTag_funcName="yes"    " æ˜¾ç¤ºå‡½æ•°å
 let g:doxygen_enhanced_color=1
 
 "************************************************
-" fzfÅäÖÃ ËÑË÷¹¤¾ß
-" ²Î¿¼£ºhttps://mounui.com/306.html
+" fzfé…ç½® æœç´¢å·¥å…·
+" å‚è€ƒï¼šhttps://mounui.com/306.html
 "************************************************
 if has('nvim') || has('gui_running')
   let $FZF_DEFAULT_OPTS .= ' --inline-info'
@@ -547,7 +548,7 @@ let g:fzf_colors =
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" ¼üÅÌÓ³Éä
+" é”®ç›˜æ˜ å°„
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 nnoremap <silent> <Leader>C        :Colors<CR>
 nnoremap <silent> <Leader>b        :Buffers<CR>
@@ -588,8 +589,8 @@ command! PlugHelp call fzf#run(fzf#wrap({
   \ 'sink':   function('s:plug_help_sink')}))
 
 "************************************************
-" limelight goyoÅäÖÃ
-" ²Î¿¼£ºhttps://mounui.com/311.html
+" limelight goyoé…ç½®
+" å‚è€ƒï¼šhttps://mounui.com/311.html
 "************************************************
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'Gray'
@@ -597,20 +598,20 @@ let g:limelight_conceal_ctermfg = 240
 " Color name (:help gui-colors) or RGB color
 let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
-" °üº¬µÄÇ°ºó¶ÎµÄÊıÁ¿
+" åŒ…å«çš„å‰åæ®µçš„æ•°é‡
 let g:limelight_paragraph_span = 1
 " Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
-" ½øÈëgoyoÄ£Ê½ºó×Ô¶¯´¥·¢limelight£¬ÍË³öÔò¹Ø±Õ
+" è¿›å…¥goyoæ¨¡å¼åè‡ªåŠ¨è§¦å‘limelightï¼Œé€€å‡ºåˆ™å…³é—­
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-" limelight¼üÅÌÓ³Éä
+" limelighté”®ç›˜æ˜ å°„
 nmap <silent> <leader>g      :Goyo<CR>
 xmap <silent> <leader>g      :Goyo<CR>
 
 "************************************************
-" incsearchÅäÖÃ
-" ²Î¿¼£ºhttps://mounui.com/314.html
+" incsearché…ç½®
+" å‚è€ƒï¼šhttps://mounui.com/314.html
 "************************************************
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -625,20 +626,20 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 "************************************************
-" signifyÅäÖÃ °æ±¾¿ØÖÆ
-" ²Î¿¼£ºhttps://mounui.com/152.html
+" signifyé…ç½® ç‰ˆæœ¬æ§åˆ¶
+" å‚è€ƒï¼šhttps://mounui.com/152.html
 "************************************************
-" ÉèÖÃÒª¼ì²éµÄVCS
+" è®¾ç½®è¦æ£€æŸ¥çš„VCS
 let g:signify_vcs_list = ['git']
-" ²åÈëÄ£Ê½ÏÂÖ¸¶¨updatetimeÊ±¼äºóÎŞ²Ù×÷½«»º´æÇø½»»»ÎÄ¼şĞ´Èë´ÅÅÌ
+" æ’å…¥æ¨¡å¼ä¸‹æŒ‡å®šupdatetimeæ—¶é—´åæ— æ“ä½œå°†ç¼“å­˜åŒºäº¤æ¢æ–‡ä»¶å†™å…¥ç£ç›˜
 let g:signify_cursorhold_insert     = 1
-" Õı³£Ä£Ê½ÏÂÖ¸¶¨updatetimeÊ±¼äºóÎŞ²Ù×÷½«»º´æÇø½»»»ÎÄ¼şĞ´Èë´ÅÅÌ
+" æ­£å¸¸æ¨¡å¼ä¸‹æŒ‡å®šupdatetimeæ—¶é—´åæ— æ“ä½œå°†ç¼“å­˜åŒºäº¤æ¢æ–‡ä»¶å†™å…¥ç£ç›˜
 let g:signify_cursorhold_normal     = 1
-" »º³åÇø±»ĞŞ¸ÄÊ±¸üĞÂ·ûºÅ
+" ç¼“å†²åŒºè¢«ä¿®æ”¹æ—¶æ›´æ–°ç¬¦å·
 let g:signify_update_on_bufenter    = 0
-" vim»ñÈ¡½¹µãÊ±¸üĞÂ·ûºÅ
+" vimè·å–ç„¦ç‚¹æ—¶æ›´æ–°ç¬¦å·
 let g:signify_update_on_focusgained = 1
-" ¼üÅÌÓ³Éä
+" é”®ç›˜æ˜ å°„
 nnoremap <leader>gt :SignifyToggle<CR>
 nnoremap <leader>gh :SignifyToggleHighlight<CR>
 nnoremap <leader>gr :SignifyRefresh<CR>
@@ -653,10 +654,10 @@ omap ac <plug>(signify-motion-outer-pending)
 xmap ac <plug>(signify-motion-outer-visual)
 
 "************************************************
-" vim-multiple-cursorsÅäÖÃ ¶à¹â±êÊäÈë
-" ²Î¿¼£ºhttps://mounui.com/319.html
+" vim-multiple-cursorsé…ç½® å¤šå…‰æ ‡è¾“å…¥
+" å‚è€ƒï¼šhttps://mounui.com/319.html
 "************************************************
-" ¹Ø±Õ²å¼şÄ¬ÈÏÓ³Éä
+" å…³é—­æ’ä»¶é»˜è®¤æ˜ å°„
 let g:multi_cursor_use_default_mapping = 0
 " mapping
 let g:multi_cursor_start_word_key      = '<C-d>'
@@ -669,40 +670,65 @@ let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 "************************************************
-" vim-instant-markdownÅäÖÃ Markdown±ê¼Ç¼´Ê±Ô¤ÀÀ
-" ²Î¿¼£ºhttps://mounui.com/322.html
+" vim-instant-markdowné…ç½® Markdownæ ‡è®°å³æ—¶é¢„è§ˆ
+" å‚è€ƒï¼šhttps://mounui.com/322.html
 "************************************************
-" ¹Ø±ÕÊµÊ±Ô¤ÀÀ
+" å…³é—­å®æ—¶é¢„è§ˆ
 let g:instant_markdown_slow = 1
-" ¹Ø±Õ´ò¿ªÎÄ¼ş×Ô¶¯Ô¤ÀÀ
+" å…³é—­æ‰“å¼€æ–‡ä»¶è‡ªåŠ¨é¢„è§ˆ
 "let g:instant_markdown_autostart = 0
-" ×èÖ¹Íâ²¿×ÊÔ´¼ÓÔØ
+" é˜»æ­¢å¤–éƒ¨èµ„æºåŠ è½½
 "let g:instant_markdown_allow_external_content = 0
 
 "************************************************
-" vim-javascriptÅäÖÃ javascriptÓï·¨¸ßÁÁ¡¢Ëõ½ø
-" ²Î¿¼£ºhttps://mounui.com/325.html
+" vim-javascripté…ç½® javascriptè¯­æ³•é«˜äº®ã€ç¼©è¿›
+" å‚è€ƒï¼šhttps://mounui.com/325.html
 "************************************************
-" ÎªjsdocÎÄµµÆôÓÃÓï·¨Í»³öÏÔÊ¾
+" ä¸ºjsdocæ–‡æ¡£å¯ç”¨è¯­æ³•çªå‡ºæ˜¾ç¤º
 let g:javascript_plugin_jsdoc = 1
-" ÎªngdocÆôÓÃ¶îÍâÓï·¨Í»³öÏÔÊ¾
+" ä¸ºngdocå¯ç”¨é¢å¤–è¯­æ³•çªå‡ºæ˜¾ç¤º
 let g:javascript_plugin_ngdoc = 1
-" ÎªFlowÆôÓÃÓï·¨Í»³öÏÔÊ¾
+" ä¸ºFlowå¯ç”¨è¯­æ³•çªå‡ºæ˜¾ç¤º
 let g:javascript_plugin_flow = 1
-" »ùÓÚÓï·¨ÎÄ¼şÆôÓÃJavaScriptµÄ´úÂëÕÛµş£¬¿ÉÄÜ»áÓ°ÏìĞÔÄÜ
+" åŸºäºè¯­æ³•æ–‡ä»¶å¯ç”¨JavaScriptçš„ä»£ç æŠ˜å ï¼Œå¯èƒ½ä¼šå½±å“æ€§èƒ½
 augroup  javascript_folding 
     au!
     au FileType javascript setlocal fdm=syntax 
 augroup  END
 
 "************************************************
-" vim-airlineÅäÖÃ ×´Ì¬À¸ÃÀ»¯
-" ²Î¿¼£ºhttps://mounui.com/
+" vim-airlineé…ç½® çŠ¶æ€æ ç¾åŒ–
+" å‚è€ƒï¼šhttps://mounui.com/
 "************************************************
-" ÉèÖÃÖ÷Ìâ
-let g:airline_theme="dark" 
-" °²×°×ÖÌåºó±ØĞëÉèÖÃ´ËÏî
-"let g:airline_powerline_fonts = 1
-" ´ò¿ªtabline¹¦ÄÜ,·½±ã²é¿´BufferºÍÇĞ»»
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" Vim åœ¨ä¸å±å¹•/é”®ç›˜äº¤äº’æ—¶ä½¿ç”¨çš„ç¼–ç (å–å†³äºå®é™…çš„ç»ˆç«¯çš„è®¾å®š)        
+set encoding=utf-8
+"set langmenu=zh_CN.UTF-8
+" è®¾ç½®æ‰“å¼€æ–‡ä»¶çš„ç¼–ç æ ¼å¼  
+"set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
+"set fileencoding=utf-8
+" è§£å†³èœå•ä¹±ç 
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
+" è§£å†³consleè¾“å‡ºä¹±ç 
+"set termencoding = cp936  
+" è®¾ç½®ä¸­æ–‡æç¤º
+"language messages zh_CN.utf-8 
+" è®¾ç½®ä¸­æ–‡å¸®åŠ©
+"set helplang=cn
+" è®¾ç½®ä¸ºåŒå­—å®½æ˜¾ç¤ºï¼Œå¦åˆ™æ— æ³•å®Œæ•´æ˜¾ç¤ºå¦‚:â˜†
+set ambiwidth=double
+" æ€»æ˜¯æ˜¾ç¤ºçŠ¶æ€æ  
+let laststatus = 2
+let g:airline_powerline_fonts = 1   " ä½¿ç”¨powerlineæ‰“è¿‡è¡¥ä¸çš„å­—ä½“
+let g:airline_theme="dark"      " è®¾ç½®ä¸»é¢˜
+" å¼€å¯tabline
+let g:airline#extensions#tabline#enabled = 1      "tablineä¸­å½“å‰bufferä¸¤ç«¯çš„åˆ†éš”å­—ç¬¦
+let g:airline#extensions#tabline#left_sep = ' '   "tablineä¸­æœªæ¿€æ´»bufferä¸¤ç«¯çš„åˆ†éš”å­—ç¬¦
+let g:airline#extensions#tabline#left_alt_sep = '|'      "tablineä¸­bufferæ˜¾ç¤ºç¼–å·
+let g:airline#extensions#tabline#buffer_nr_show = 1      
+" æ˜ å°„åˆ‡æ¢bufferçš„é”®ä½
+nnoremap [b :bp<CR>
+nnoremap ]b :bn<CR>
+ 
+set guifont=Powerline_Consolas:h14:cANSI   
+"å­—ä½“DejaVu Sans Mono for Powerlineï¼Œéœ€æ”¾åœ¨é…ç½®æ–‡ä»¶æœ€åé¢
