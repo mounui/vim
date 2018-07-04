@@ -386,6 +386,7 @@ Plugin 'junegunn/fzf.vim'               " 搜索工具
 Plugin 'junegunn/limelight.vim'         " 界面设置
 Plugin 'junegunn/goyo.vim'              " 配合limelight使用
 Plugin 'haya14busa/incsearch.vim'       " 搜索工具
+Plugin 'justinmk/vim-sneak'             " 跳转工具
 Plugin 'mhinz/vim-signify'              " 版本控制
 Plugin 'terryma/vim-multiple-cursors'   " 多光标输入
 Plugin 'suan/vim-instant-markdown'      " Markdown
@@ -487,8 +488,8 @@ let g:ale_sign_column_always = 1
 " 禁用突出显示
 let g:ale_set_highlights = 0
 " 自定义error和warning标识符
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '○'
 " 在vim自带的状态栏中整合ale
 "let g:ale_statusline_format = ['X %d', '! %d', 'O ok']
 " 显示Linter名称,出错或警告等相关信息
