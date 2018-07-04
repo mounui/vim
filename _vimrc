@@ -695,6 +695,21 @@ augroup  javascript_folding
     au!
     au FileType javascript setlocal fdm=syntax 
 augroup  END
+" 设置隐藏字符 （设置的字符要在系统允许的范围内）
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "►"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "○"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "Ᵽ"
+" let g:javascript_conceal_noarg_arrow_function = ""
+" let g:javascript_conceal_underscore_arrow_function = ""
+" 启用隐藏
+set conceallevel=1
 
 "************************************************
 " vim-airline配置 状态栏美化
