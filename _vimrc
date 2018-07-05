@@ -734,3 +734,9 @@ nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 " 设置字体 
 set guifont=Powerline_Consolas:h14:cANSI   
+
+let g:openbrowser_default_search = "baidu"
+    let g:openbrowser_search_engines = {
+		\       'baidu': 'http://www.baidu.com/s?wd={query}&rsv_bp=0&rsv_spt=3&inputT=2478',
+    \}
+
