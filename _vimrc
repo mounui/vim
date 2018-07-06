@@ -737,7 +737,7 @@ set guifont=Powerline_Consolas:h14:cANSI
 
 "************************************************
 " open-browser配置 打开浏览器
-" 参考：https://mounui.com/
+" 参考：https://mounui.com/343.html
 "************************************************
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
