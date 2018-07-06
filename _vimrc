@@ -636,9 +636,9 @@ map g# <Plug>(incsearch-nohl-g#)
 " 设置要检查的VCS
 let g:signify_vcs_list = ['git']
 " 插入模式下指定updatetime时间后无操作将缓存区交换文件写入磁盘
-let g:signify_cursorhold_insert     = 1
+"let g:signify_cursorhold_insert     = 1
 " 正常模式下指定updatetime时间后无操作将缓存区交换文件写入磁盘
-let g:signify_cursorhold_normal     = 1
+"let g:signify_cursorhold_normal     = 1
 " 缓冲区被修改时更新符号
 let g:signify_update_on_bufenter    = 0
 " vim获取焦点时更新符号
@@ -748,3 +748,21 @@ let g:openbrowser_default_search = 'baidu'
 let g:openbrowser_search_engines = {
 \  'baidu': 'http://www.baidu.com/s?wd={query}&rsv_bp=0&rsv_spt=3&inputT=2478',
 \}
+
+"************************************************
+" nerdtree配置 目录树资源管理器
+" 参考：https://mounui.com/
+"************************************************
+map <leader>ne :NERDTreeToggle<CR>
+" 修改默认箭头符号
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+augroup NERDTree
+    au!
+    autocmd vimenter * NERDTree     " vim启动时自动打开NERDTree
+    " vim启动打开目录时自动打开NERDTree
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+    " 文件全部关闭时退出NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
