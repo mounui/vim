@@ -397,6 +397,7 @@ Plugin 'vim-airline/vim-airline'        " 状态栏美化
 Plugin 'vim-airline/vim-airline-themes' " airline主题
 Plugin 'tyru/open-browser.vim'          " 打开浏览器
 Plugin 'scrooloose/nerdtree'            " 文件浏览（目录树）
+Plugin 'tpope/vim-surround'             " 配对操作符
 
 call vundle#end()
 
