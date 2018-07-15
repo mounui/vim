@@ -758,7 +758,7 @@ let g:openbrowser_search_engines = {
 map <leader>ne :NERDTreeToggle<CR>
 " 目录树窗口尺寸
 let g:NERDTreeWinSize = 20
-" 关系nerd帮助
+" 关闭nerd帮助
 " let g:NERDTreeMinimalUI = 1
 " 修改默认箭头符号
 let g:NERDTreeDirArrowExpandable = '▸'
