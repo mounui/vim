@@ -397,6 +397,7 @@ Plugin 'vim-airline/vim-airline'        " 状态栏美化
 Plugin 'vim-airline/vim-airline-themes' " airline主题
 Plugin 'tyru/open-browser.vim'          " 打开浏览器
 Plugin 'scrooloose/nerdtree'            " 文件浏览（目录树）
+Plugin 'Xuyuanp/nerdtree-git-plugin'    " NERDTree直接显示git信息
 Plugin 'tpope/vim-surround'             " 配对操作符
 Plugin 'tpope/vim-fugitive'             " git包装器
 
@@ -753,13 +754,19 @@ let g:openbrowser_search_engines = {
 
 "************************************************
 " nerdtree配置 目录树资源管理器
-" 参考：https://mounui.com/
+" 参考：https://mounui.com/347.html
 "************************************************
 map <leader>ne :NERDTreeToggle<CR>
 " 目录树窗口尺寸
 let g:NERDTreeWinSize = 20
 " 关闭nerd帮助
 " let g:NERDTreeMinimalUI = 1
+" 忽略以下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" 显示书签列表
+let NERDTreeShowBookmarks=1
+" 显示隐藏文件
+let NERDTreeShowHidden=1
 " 修改默认箭头符号
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
