@@ -2,7 +2,7 @@
 # VIM CHEATSHEET （VIM速查表）
 # Author：mounui	http://mounui.com
 # https://github.com/mounui/vim/cheatsheet.txt
-# version：2.0	Last Modified：2018-05-22 22:31
+# version：2.0	Last Modified：2018-10-24 17:47
 ############################################################################
 
 ############################################################################
